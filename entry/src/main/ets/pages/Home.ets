@@ -63,7 +63,6 @@ struct MainPage {
       TabContent() {
         IndexPage()
       }
-      .padding({ left: $r('app.float.mainPage_padding'), right: $r('app.float.mainPage_padding') })
       .backgroundColor($r('app.color.mainPage_backgroundColor'))
       .tabBar(this.TabBuilder(CommonConstants.SORT_TITLE, CommonConstants.SORT_TAB_INDEX,
         $r('app.media.photoedit_more_filled'), $r('app.media.ic_gallery_photoedit_more')))
