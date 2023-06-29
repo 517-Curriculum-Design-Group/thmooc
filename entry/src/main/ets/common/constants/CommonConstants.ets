@@ -43,6 +43,8 @@ export default class CommonConstants {
   /**
    * Title text of the setting page
    */
+  static readonly SORT_TITLE = '分类';
+
   static readonly MINE_TITLE = '我的';
 
   static readonly COMMUNITY_TITLE = "社区";
