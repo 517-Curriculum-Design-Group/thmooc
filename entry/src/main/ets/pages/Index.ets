@@ -140,6 +140,9 @@ struct Index {
           .margin({top:30})
           .onClick(()=>{
             Logger.debug("跳转到注册页")
+            router.pushUrl({
+              url:'pages/Register'
+            })
           })
 
       }
