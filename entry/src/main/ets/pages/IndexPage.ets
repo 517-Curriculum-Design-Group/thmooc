@@ -124,7 +124,7 @@ export default struct IndexPage {
                 }
               }, (item: ClassifyModel) => `${item.classifyId}`)
             }
-            .padding({ left: $r('app.float.item_padding_left'), right: $r('app.float.course_item_padding') })
+            .padding({ left: $r('app.float.item_padding_left'), right: $r('app.float.course_item_padding'),bottom: 60 })
             .sticky(StickyStyle.Header)
             .layoutWeight(1)
             .edgeEffect(EdgeEffect.None)
