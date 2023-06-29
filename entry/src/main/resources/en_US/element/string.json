@@ -37,6 +37,10 @@
       "value": "UserName must be phone number!"
     },
     {
+      "name": "input_empty_tips",
+      "value": "The input cannot be empty.!"
+    }，
+    {
       "name": "vertical_line",
       "value": "  |  "
     },
@@ -296,5 +300,6 @@
       "name": "hei_ti",
       "value": "HarmonyHeiTi"
     }
+
   ]
 }
