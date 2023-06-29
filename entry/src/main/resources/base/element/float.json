@@ -1,0 +1,24 @@
+{
+  "float": [
+    {
+      "name": "login_title_font_size",
+      "value": "35"
+    },
+    {
+      "name": "login_input_height",
+      "value": "40"
+    },
+    {
+      "name": "login_input_margin_top",
+      "value": "50"
+    },
+    {
+      "name": "login_button_opacity",
+      "value": "0.9"
+    },
+    {
+      "name": "login_error_message_font_size",
+      "value": "15"
+    }
+  ]
+}

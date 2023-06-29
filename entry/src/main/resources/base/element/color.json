@@ -1,0 +1,16 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "login_check_license_font_color",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "login_select_background_color",
+      "value": "#FFb1b2b3"
+    }
+  ]
+}
