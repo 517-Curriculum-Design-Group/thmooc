@@ -275,6 +275,26 @@
     {
       "name": "refresh_text",
       "value": "正在刷新"
+    },
+    {
+      "name": "loading",
+      "value": "loading..."
+    },
+    {
+      "name": "free_price",
+      "value": "Free"
+    },
+    {
+      "name": "price_str",
+      "value": "¥%d"
+    },
+    {
+      "name": "hei_ti_medium",
+      "value": "HarmonyHeiTi-Medium"
+    },
+    {
+      "name": "hei_ti",
+      "value": "HarmonyHeiTi"
     }
   ]
 }

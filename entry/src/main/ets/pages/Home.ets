@@ -17,6 +17,7 @@ import CommonConstants from '../common/constants/CommonConstants';
 import Home from "../view/Home"
 import Setting from "../view/Setting"
 import Community from  "../view/Community"
+import IndexPage from "./IndexPage"
 
 /**
  * Main page
@@ -58,6 +59,14 @@ struct MainPage {
       .backgroundColor($r('app.color.mainPage_backgroundColor'))
       .tabBar(this.TabBuilder(CommonConstants.HOME_TITLE, CommonConstants.HOME_TAB_INDEX,
         $r('app.media.home_selected'), $r('app.media.home_normal')))
+
+      TabContent() {
+        IndexPage()
+      }
+      .padding({ left: $r('app.float.mainPage_padding'), right: $r('app.float.mainPage_padding') })
+      .backgroundColor($r('app.color.mainPage_backgroundColor'))
+      .tabBar(this.TabBuilder(CommonConstants.SORT_TITLE, CommonConstants.SORT_TAB_INDEX,
+        $r('app.media.photoedit_more_filled'), $r('app.media.ic_gallery_photoedit_more')))
 
       TabContent() {
         Community()

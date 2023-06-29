@@ -3,6 +3,8 @@
     "pages/Index",
     "pages/Loading",
     "pages/Home",
+    "pages/IndexPage",
+    "pages/videoDetail",
     "pages/Register"
   ]
 }
