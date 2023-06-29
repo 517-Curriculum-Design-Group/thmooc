@@ -5,6 +5,7 @@
     "pages/Home",
     "pages/IndexPage",
     "pages/videoDetail",
-    "pages/Register"
+    "pages/Register",
+    "pages/PersonalPage"
   ]
 }
