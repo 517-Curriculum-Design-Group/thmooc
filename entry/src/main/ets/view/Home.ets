@@ -15,7 +15,6 @@ export default struct Home {
   @State searchChangeValue: string = ''
   @State searchSubmitValue: string = ''
 
-
   build() {
     Scroll() {
       Column({ space: CommonConstants.COMMON_SPACE }) {
@@ -74,7 +73,6 @@ export default struct Home {
         .borderRadius($r('app.float.home_grid_borderRadius'))
 
 
-
         Text('热门推荐')
           .width(CommonConstants.FULL_PARENT)
           .fontSize($r('app.float.title_line_height'))
@@ -82,12 +80,10 @@ export default struct Home {
           .margin({ top: $r('app.float.home_text_margin') })
 
 
-        //TODO:首页推送课程列表
         List() {
-          //ForEach(classifyViewModel.getLinkData(), (classifyData: ClassifyModel) => {
             ListItem(){
               Column() {
-                ForEach(classifyViewModel.getLinkData()[0].courseList, (courseData: CourseModel) => {
+                ForEach(classifyViewModel.getLinkData()[1].courseList, (courseData: CourseModel) => {
                   Row(){
                     Image(courseData.imageUrl)
                       .backgroundColor(Color.White)
@@ -102,25 +98,24 @@ export default struct Home {
                         .fontSize($r('app.float.title_line_height'))
                         .fontWeight(FontWeight.Bold)
                         .margin({ top: $r('app.float.home_text_margin') })
-                        .padding(10)
+                        //.padding(10)
                         //.align(Alignment.Center)
 
                       Text(courseData.price.toString() + "元")
-                        .fontSize($r('app.float.normal_text_size'))
-                        .fontWeight(FontWeight.Medium)
-                        //.align(Alignment.Start)
+                        .fontSize($r('app.float.header_font_size'))
+                        .fontColor($r('app.color.price_color'))
 
                       Row(){
                         Text('1000+人正在观看')
                           .fontSize($r('app.float.small_text_size'))
                           .fontWeight(FontWeight.Medium)
                           .fontColor(Color.Gray)
-                          .padding(10)
+                          //.padding(10)
                           //.align(Alignment.Start)
 
                         Button("现在报名")
                           .fontSize($r('app.float.small_text_size'))
-                          .padding(10)
+                          //.padding(10)
                       }
 
                     }
@@ -138,11 +133,14 @@ export default struct Home {
               }
             }
             .height(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
-          //})
         }
         .width(CommonConstants.FULL_PARENT)
+        .width('100%')
+        .margin({bottom:20})
       }
+
     }
-    .height(CommonConstants.FULL_PARENT)
+    //.height(CommonConstants.FULL_PARENT)
+    //.margin({ bottom:90})
   }
 }
