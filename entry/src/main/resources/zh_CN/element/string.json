@@ -39,14 +39,10 @@
     {
       "name": "input_empty_tips",
       "value": "输入不能为空!"
-    }，
+    },
     {
       "name": "vertical_line",
       "value": "  |  "
-    },
-    {
-      "name": "input_empty_tips",
-      "value": "输入不能为空"
     },
     {
       "name": "login_success",
