@@ -33,6 +33,9 @@ struct MainPage {
       Image(this.currentIndex === index ? selectedImg : normalImg)
         .width($r('app.float.mainPage_baseTab_size'))
         .height($r('app.float.mainPage_baseTab_size'))
+        .onClick(() => {
+
+        })
       Text(title)
         .margin({ top: $r('app.float.mainPage_baseTab_top') })
         .fontSize($r('app.float.main_tab_fontSize'))
