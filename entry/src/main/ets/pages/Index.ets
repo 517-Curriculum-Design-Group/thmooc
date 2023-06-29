@@ -35,23 +35,6 @@ struct Index {
 
       Column() {
 
-        // if(!this.userNameCheckReg.test(this.userName) && this.userName !='')
-        // {
-        //   Text($r('app.string.user_name_error_message'))
-        //     .fontSize($r('app.float.login_error_message_font_size'))
-        //     .fontColor(Color.Red)
-        //     .width('80%')
-        //     .visibility(Visibility.Visible)
-        // }
-        // else
-        // {
-        //   Text($r('app.string.user_name_error_message'))
-        //     .fontSize($r('app.float.login_error_message_font_size'))
-        //     .fontColor(Color.Red)
-        //     .width('80%')
-        //     .visibility(Visibility.Hidden)
-        // }
-
         TextInput({ placeholder: $r('app.string.Login_UserName') })
           .width('80%')
           .height($r('app.float.login_input_height'))
@@ -159,7 +142,7 @@ struct Index {
     .backgroundImage($r('app.media.cloud'))
     .backgroundImageSize(ImageSize.Cover)
     .onClick(()=>{
-      Logger.info("jiance")
+      Logger.info("Check Click")
     })
 
   }
