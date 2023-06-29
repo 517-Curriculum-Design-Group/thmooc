@@ -35,6 +35,10 @@
     {
       "name": "user_name_error_message",
       "value": "请使用11位手机号登录系统！！！"
+    },
+    {
+      "name": "input_empty_tips",
+      "value": "输入不能为空!"
     }
   ]
 }

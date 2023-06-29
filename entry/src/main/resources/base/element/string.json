@@ -35,6 +35,10 @@
     {
       "name": "user_name_error_message",
       "value": "UserName must be phone number!"
+    },
+    {
+      "name": "input_empty_tips",
+      "value": "The input cannot be empty.!"
     }
   ]
 }
