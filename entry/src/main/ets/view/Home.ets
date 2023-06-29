@@ -39,6 +39,8 @@ export default struct Home {
 
         //TODO:首页顶部搜索框
 
+
+
         Swiper(this.swiperController) {
           ForEach(mainViewModel.getSwiperImages(), (img: Resource) => {
             Image(img).borderRadius($r('app.float.home_swiper_borderRadius'))
@@ -48,7 +50,9 @@ export default struct Home {
         .autoPlay(true)
         .interval(2500)
         .duration(500)
-        
+        .width('100%')
+        //.height('20%')
+
         Grid() {
           ForEach(mainViewModel.getFirstGridData(), (item: ItemData) => {
             GridItem() {
