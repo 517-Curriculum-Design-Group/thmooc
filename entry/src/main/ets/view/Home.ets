@@ -77,6 +77,8 @@ export default struct Home {
           .width(CommonConstants.FULL_PARENT)
           .margin({ top: $r('app.float.home_text_margin') })
 
+
+        //TODO:首页推送课程列表
         Grid() {
           ForEach(mainViewModel.getSecondGridData(), (secondItem: ItemData) => {
             GridItem() {
