@@ -1,17 +1,3 @@
-/*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
 import CommonConstants from '../common/constants/CommonConstants';
 import mainViewModel from '../viewmodel/MainViewModel';
@@ -23,22 +9,31 @@ import ItemData from '../common/bean/ItemData';
 @Component
 export default struct Home {
   private swiperController: SwiperController = new SwiperController();
+  private searchController: SearchController = new SearchController()
+  @State searchChangeValue: string = ''
+  @State searchSubmitValue: string = ''
+
 
   build() {
     Scroll() {
       Column({ space: CommonConstants.COMMON_SPACE }) {
-        // Column(){
-        //   Text($r('app.string.mainPage_tabTitles_home'))
-        //     .fontWeight(FontWeight.Medium)
-        //     .fontSize($r('app.float.page_title_text_size'))
-        //     .margin({ top: $r('app.float.mainPage_tabTitles_margin') })
-        //     .padding({ left: $r('app.float.mainPage_tabTitles_padding') })
-        // }
-        // .width(CommonConstants.FULL_PARENT)
-        // .alignItems(HorizontalAlign.Start)
 
-        //TODO:首页顶部搜索框
-
+        //首页顶部搜索框
+        Search({ value: this.searchChangeValue, placeholder: 'JS从入门到入土', controller: this.searchController })
+          .searchButton('搜索')
+          .width('100%')
+          .height(50)
+          .margin({top : 15})
+          .backgroundColor('#F5F5F5')
+          .placeholderColor(Color.Grey)
+          .placeholderFont({ size: 14, weight: 400 })
+          .textFont({ size: 14, weight: 400 })
+          .onSubmit((value: string) => {
+            this.searchSubmitValue = value
+          })
+          .onChange((value: string) => {
+            this.searchChangeValue = value
+          })
 
 
         Swiper(this.swiperController) {
@@ -46,7 +41,7 @@ export default struct Home {
             Image(img).borderRadius($r('app.float.home_swiper_borderRadius'))
           }, img => img.id)
         }
-        .margin({ top: $r('app.float.home_swiper_margin') })
+        //.margin({ top: $r('app.float.home_swiper_margin') })
         .autoPlay(true)
         .interval(2500)
         .duration(500)
@@ -82,6 +77,8 @@ export default struct Home {
           .width(CommonConstants.FULL_PARENT)
           .margin({ top: $r('app.float.home_text_margin') })
 
+
+        //TODO:首页推送课程列表
         Grid() {
           ForEach(mainViewModel.getSecondGridData(), (secondItem: ItemData) => {
             GridItem() {
