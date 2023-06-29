@@ -118,5 +118,6 @@ export default class CommonConstants {
   static readonly MAX_DATA_LENGTH: number = 12;
 
   static readonly HOME_PAGE_COURSE_HEIGHT: string = '15%';
-  static readonly HOME_PAGE_COURSE_IMG_WIDTH: string = '43%';
+  static readonly HOME_PAGE_COURSE_IMG_WIDTH: string = '37%';
+  static readonly HOME_PAGE_COURSE_TEXT_WIDTH: string = '63%';
 }
