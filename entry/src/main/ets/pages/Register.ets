@@ -6,9 +6,6 @@ import Logger from '../common/utils/Logger'
 @Component
 struct Register
 {
-  @State username: string=''
-  @State password: string=''
-  @State repassword: string=''
   private userNameCheckReg = /^1[3|4|5|6|7|8|9][0-9]{9}/ //手机号校验规则
 
   build()
@@ -28,7 +25,7 @@ struct Register
             .height($r('app.float.login_input_height'))
             .margin({ top: 30 })
             .onChange((value)=>{
-              this.username = value
+
             })
 
           TextInput({ placeholder:"输入密码" })
@@ -37,7 +34,7 @@ struct Register
             .height($r('app.float.login_input_height'))
             .margin({ top: 30 })
             .onChange((value)=>{
-              this.password=value
+
             })
 
           TextInput({ placeholder: "确认密码" })
@@ -46,7 +43,7 @@ struct Register
             .height($r('app.float.login_input_height'))
             .margin({ top: 30 })
             .onChange((value)=>{
-              this.repassword=value
+
             })
 
         }
@@ -55,12 +52,6 @@ struct Register
           .width(Const.HALF_SIZE)
           .opacity($r('app.float.login_button_opacity'))
           .margin({bottom:150})
-          .onClick(()=>{
-            if(this.username&&this.username&&this.repassword)
-            router.pushUrl({
-              url:'pages/Index'
-            })
-          })
 
 
       }

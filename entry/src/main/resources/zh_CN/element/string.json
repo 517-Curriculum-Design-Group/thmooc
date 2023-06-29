@@ -37,6 +37,10 @@
       "value": "请使用11位手机号登录系统！！！"
     },
     {
+      "name": "input_empty_tips",
+      "value": "输入不能为空!"
+    }，
+    {
       "name": "vertical_line",
       "value": "  |  "
     },
