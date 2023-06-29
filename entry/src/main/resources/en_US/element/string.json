@@ -39,14 +39,10 @@
     {
       "name": "input_empty_tips",
       "value": "The input cannot be empty.!"
-    }，
+    },
     {
       "name": "vertical_line",
       "value": "  |  "
-    },
-    {
-      "name": "input_empty_tips",
-      "value": "The input cannot be empty."
     },
     {
       "name": "login_success",
