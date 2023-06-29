@@ -1,7 +1,9 @@
-
 import CommonConstants from '../common/constants/CommonConstants';
 import mainViewModel from '../viewmodel/MainViewModel';
+import classifyViewModel from '../viewmodel/ClassifyViewModel';
 import ItemData from '../common/bean/ItemData';
+import ClassifyModel from '../common/bean/ClassifyModel';
+import CourseModel from '../common/bean/CourseModel';
 
 /**
  * Home tab content
@@ -71,14 +73,63 @@ export default struct Home {
         .backgroundColor(Color.White)
         .borderRadius($r('app.float.home_grid_borderRadius'))
 
-        Text($r('app.string.home_list'))
-          .fontSize($r('app.float.normal_text_size'))
-          .fontWeight(FontWeight.Medium)
+
+
+        Text('热门推荐')
           .width(CommonConstants.FULL_PARENT)
+          .fontSize($r('app.float.title_line_height'))
+          .fontWeight(FontWeight.Bold)
           .margin({ top: $r('app.float.home_text_margin') })
 
 
         //TODO:首页推送课程列表
+        List() {
+          ForEach(classifyViewModel.getLinkData(), (classifyData: ClassifyModel) => {
+            ListItem(){
+              Column() {
+                ForEach(classifyData.courseList, (courseData: CourseModel) => {
+
+                  Row(){
+
+                    Image(courseData.imageUrl)
+                      .backgroundColor(Color.White)
+                      .borderRadius(7)
+                      .align(Alignment.TopStart)
+                      .width(CommonConstants.HOME_PAGE_COURSE_IMG_WIDTH)
+                      .height(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
+
+                    Column()
+                    {
+                      Text(courseData.courseName)
+                        .fontSize($r('app.float.title_line_height'))
+                        .fontWeight(FontWeight.Bold)
+                        .margin({ top: $r('app.float.home_text_margin') })
+                        //align(Alignment.TopStart)
+
+                      Text(courseData.price.toString() + "元")
+                        .fontSize($r('app.float.normal_text_size'))
+                        .fontWeight(FontWeight.Medium)
+                    }
+                    .height(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
+                    .width(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
+                  }
+                  .justifyContent(FlexAlign.SpaceBetween)
+                  .height(CommonConstants.GOODS_LIST_HEIGHT)
+                  .width(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
+                  .margin(5)
+                  .backgroundColor(Color.White)
+
+                })
+              }
+            }
+            .height(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
+
+          })
+
+        }
+        .width(CommonConstants.FULL_PARENT)
+
+
         Grid() {
           ForEach(mainViewModel.getSecondGridData(), (secondItem: ItemData) => {
             GridItem() {
@@ -104,8 +155,8 @@ export default struct Home {
         }
         .width(CommonConstants.FULL_PARENT)
         .height($r('app.float.home_secondGrid_height'))
-        .columnsTemplate('1fr 1fr')
-        .rowsTemplate('1fr 1fr')
+        .columnsTemplate('1fr')
+        .rowsTemplate('1fr 1fr 1fr 1fr')
         .columnsGap($r('app.float.home_grid_columnsGap'))
         .rowsGap($r('app.float.home_grid_rowGap'))
         .margin({ bottom: $r('app.float.setting_button_bottom')})
