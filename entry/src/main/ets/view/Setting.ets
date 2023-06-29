@@ -16,6 +16,7 @@
 import CommonConstants from '../common/constants/CommonConstants';
 import ItemData from '../common/bean/ItemData';
 import mainViewModel from '../viewmodel/MainViewModel';
+import router from '@ohos.router';
 
 /**
  * Setting tab content
@@ -65,15 +66,24 @@ export default struct Setting {
           Image($r('app.media.account'))
             .width($r('app.float.setting_account_size'))
             .height($r('app.float.setting_account_size'))
+          .onClick(() => {
+            return router.pushUrl({url: 'pages/PersonalPage'})
+          })
           Column() {
             Text($r('app.string.setting_account_name'))
               .fontSize($r('app.float.setting_account_fontSize'))
-            Text($r('app.string.setting_account_email'))
+            Text($r('app.string.setting_account_signature'))
               .fontSize($r('app.float.little_text_size'))
               .margin({ top: $r('app.float.setting_name_margin') })
           }
           .alignItems(HorizontalAlign.Start)
           .margin({ left: $r('app.float.setting_account_margin') })
+
+          // Image($r('app.media.right_grey'))
+          //   .width($r('app.float.setting_jump_width'))
+          //   .height($r('app.float.setting_jump_height'))
+          //
+
         }
         .margin({ top: $r('app.float.setting_account_margin') })
         .alignItems(VerticalAlign.Center)
@@ -111,6 +121,9 @@ export default struct Setting {
           .fontWeight(FontWeight.Medium)
           .backgroundColor($r('app.color.setting_button_backgroundColor'))
           .margin({ bottom: $r('app.float.setting_button_bottom')})
+          .onClick(()=>{
+            router.pushUrl({url: 'pages/Index'})
+          })
       }
       .height(CommonConstants.FULL_PARENT)
     }
