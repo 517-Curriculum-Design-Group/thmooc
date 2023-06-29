@@ -27,15 +27,17 @@ export default struct Home {
   build() {
     Scroll() {
       Column({ space: CommonConstants.COMMON_SPACE }) {
-        Column(){
-          Text($r('app.string.mainPage_tabTitles_home'))
-            .fontWeight(FontWeight.Medium)
-            .fontSize($r('app.float.page_title_text_size'))
-            .margin({ top: $r('app.float.mainPage_tabTitles_margin') })
-            .padding({ left: $r('app.float.mainPage_tabTitles_padding') })
-        }
-        .width(CommonConstants.FULL_PARENT)
-        .alignItems(HorizontalAlign.Start)
+        // Column(){
+        //   Text($r('app.string.mainPage_tabTitles_home'))
+        //     .fontWeight(FontWeight.Medium)
+        //     .fontSize($r('app.float.page_title_text_size'))
+        //     .margin({ top: $r('app.float.mainPage_tabTitles_margin') })
+        //     .padding({ left: $r('app.float.mainPage_tabTitles_padding') })
+        // }
+        // .width(CommonConstants.FULL_PARENT)
+        // .alignItems(HorizontalAlign.Start)
+
+        //TODO:首页顶部搜索框
 
         Swiper(this.swiperController) {
           ForEach(mainViewModel.getSwiperImages(), (img: Resource) => {
@@ -44,7 +46,9 @@ export default struct Home {
         }
         .margin({ top: $r('app.float.home_swiper_margin') })
         .autoPlay(true)
-
+        .interval(2500)
+        .duration(500)
+        
         Grid() {
           ForEach(mainViewModel.getFirstGridData(), (item: ItemData) => {
             GridItem() {
@@ -59,7 +63,7 @@ export default struct Home {
             }
           }, item => JSON.stringify(item))
         }
-        .columnsTemplate('1fr 1fr 1fr 1fr')
+        .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
         .rowsTemplate('1fr 1fr')
         .columnsGap($r('app.float.home_grid_columnsGap'))
         .rowsGap($r('app.float.home_grid_rowGap'))

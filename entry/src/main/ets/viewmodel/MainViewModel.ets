@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import HomePageGridData from '../common/bean/HomePageGridData';
 
 import ItemData from '../common/bean/ItemData';
 
@@ -40,16 +41,18 @@ export class MainViewModel {
    *
    * @return {Array<PageResource>} firstGridData.
    */
-  getFirstGridData(): Array<ItemData> {
-    let firstGridData: ItemData[] = [
-      new ItemData($r('app.string.my_love'), $r('app.media.love')),
-      new ItemData($r('app.string.history_record'), $r('app.media.record')),
-      new ItemData($r('app.string.message'), $r('app.media.message')),
-      new ItemData($r('app.string.shopping_cart'), $r('app.media.shopping')),
-      new ItemData($r('app.string.my_goal'), $r('app.media.target')),
-      new ItemData($r('app.string.group'), $r('app.media.circle')),
-      new ItemData($r('app.string.favorites'), $r('app.media.favorite')),
-      new ItemData($r('app.string.recycle_bin'), $r('app.media.recycle'))
+  getFirstGridData(): Array<HomePageGridData> {
+    let firstGridData: HomePageGridData[] = [
+      new HomePageGridData('通鸿英语', $r('app.media.english')),
+      new HomePageGridData('通鸿考研', $r('app.media.bachelo')),
+      new HomePageGridData('通鸿考证', $r('app.media.pencil')),
+      new HomePageGridData('数字技能', $r('app.media.monitor')),
+      new HomePageGridData('大学考试', $r('app.media.topic')),
+      new HomePageGridData('职场提升', $r('app.media.rocket')),
+      new HomePageGridData('兴趣副业', $r('app.media.tea')),
+      new HomePageGridData('设计创作', $r('app.media.platte')),
+      new HomePageGridData('微光计划', $r('app.media.light')),
+      new HomePageGridData('免费好课', $r('app.media.book'))
     ];
     return firstGridData;
   }
