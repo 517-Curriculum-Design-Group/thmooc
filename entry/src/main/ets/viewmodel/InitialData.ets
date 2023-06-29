@@ -31,35 +31,35 @@ export interface GoodsListItemType {
 
 export const goodsInitialList: GoodsListItemType[] = [
   {
-    goodsImg: $r('app.media.goodsImg'),
+    goodsImg: $r('app.media.disImg3'),
     goodsName: $r('app.string.goodsName'),
     advertising_language: $r('app.string.advertising_language'),
     evaluate: $r('app.string.evaluate'),
     price: $r('app.string.price_199'),
-    category:1,
+    category:0,
   },
   {
-    goodsImg: $r('app.media.goodsImg_2'),
+    goodsImg: $r('app.media.disImg2'),
     goodsName: $r('app.string.another_goodsName'),
     advertising_language: $r('app.string.advertising_language'),
     evaluate: $r('app.string.evaluate'),
     price: $r('app.string.price_265'),
-    category:2,
+    category:1,
   },
   {
-    goodsImg: $r('app.media.goodsImg_3'),
+    goodsImg: $r('app.media.disImg4'),
     goodsName: $r('app.string.workName'),
     advertising_language: $r('app.string.advertising_language'),
     evaluate: $r('app.string.evaluate'),
     price: $r('app.string.price_810'),
-    category:3,
+    category:2,
   },
   {
-    goodsImg: $r('app.media.goodsImg_4'),
+    goodsImg: $r('app.media.disImg5'),
     goodsName: $r('app.string.another_workName'),
     advertising_language: $r('app.string.advertising_language'),
     evaluate: $r('app.string.evaluate'),
     price: $r('app.string.price_999'),
-    category:4,
+    category:3,
   },
 ]

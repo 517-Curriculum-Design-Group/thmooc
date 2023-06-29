@@ -111,38 +111,39 @@ export default struct TabBar {
           Row() {
             List({ space: commonConst.LIST_ITEM_SPACE }) {
               LazyForEach(this.goodsList, (item) => {
-                if(item.category === index){
                   ListItem() {
-                    Row() {
-                      Column() {
-                        Text(item?.goodsName)
-                          .fontSize(18).fontWeight(50).width('100%').margin({bottom:5})
-                        // .margin({ bottom: commonConst.BIGGER_FONT_SIZE })
-                        Image(item?.goodsImg)
-                          .width('100%')
-                          .height(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
-                        Row(){
+                    if(item.category === index){
+                      Row() {
+                        Column() {
+                          Text(item?.goodsName)
+                            .fontSize(18).fontWeight(50).width('100%').margin({bottom:5})
+                          // .margin({ bottom: commonConst.BIGGER_FONT_SIZE })
+                          Image(item?.goodsImg)
+                            .width('100%')
+                            .height(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
                           Row(){
-                            Image($r('app.media.highlights')).width($r('app.float.mainPage_baseTab_size')).height($r('app.float.mainPage_baseTab_size'))
-                            Text('收藏').fontColor(Color.Gray).margin({left:5})
-                          }
-                          Row(){
-                            Image($r('app.media.comments')).width($r('app.float.mainPage_baseTab_size')).height($r('app.float.mainPage_baseTab_size'))
-                            Text('评论').fontColor(Color.Gray).margin({left:5})
-                          }
-                          Row(){
-                            Image($r('app.media.thumbsup')).width($r('app.float.mainPage_baseTab_size')).height($r('app.float.mainPage_baseTab_size'))
-                            Text('点赞').fontColor(Color.Gray).margin({left:5})
-                          }
-                        }.width('100%').justifyContent(FlexAlign.SpaceAround).margin({top:10})
+                            Row(){
+                              Image($r('app.media.highlights')).width($r('app.float.mainPage_baseTab_size')).height($r('app.float.mainPage_baseTab_size'))
+                              Text('收藏').fontColor(Color.Gray).margin({left:5})
+                            }
+                            Row(){
+                              Image($r('app.media.comments')).width($r('app.float.mainPage_baseTab_size')).height($r('app.float.mainPage_baseTab_size'))
+                              Text('评论').fontColor(Color.Gray).margin({left:5})
+                            }
+                            Row(){
+                              Image($r('app.media.thumbsup')).width($r('app.float.mainPage_baseTab_size')).height($r('app.float.mainPage_baseTab_size'))
+                              Text('点赞').fontColor(Color.Gray).margin({left:5})
+                            }
+                          }.width('100%').justifyContent(FlexAlign.SpaceAround).margin({top:10})
+                        }
+                        .width('100%')
+                        .height(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
                       }
+                      .justifyContent(FlexAlign.Center)
+                      .height(commonConst.GOODS_LIST_HEIGHT)
                       .width('100%')
-                      .height(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
+                      .margin({bottom:70})
                     }
-                    .justifyContent(FlexAlign.Center)
-                    .height(commonConst.GOODS_LIST_HEIGHT)
-                    .width('100%')
-                    .margin({bottom:70})
                   }
                   .onTouch((event: TouchEvent) => {
                     switch (event.type) {
@@ -159,7 +160,8 @@ export default struct TabBar {
                         break;
                     }
                   })
-                }
+
+
               })
             }
             .width(commonConst.GOODS_LIST_WIDTH)

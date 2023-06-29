@@ -22,6 +22,7 @@ export default struct GoodsList {
   private startTouchOffsetY: number = 0;
   private endTouchOffsetY: number = 0;
 
+
   build() {
     Row() {
       List({ space: commonConst.LIST_ITEM_SPACE }) {

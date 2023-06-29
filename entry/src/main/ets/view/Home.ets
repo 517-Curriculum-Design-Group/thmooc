@@ -1,7 +1,9 @@
-
 import CommonConstants from '../common/constants/CommonConstants';
 import mainViewModel from '../viewmodel/MainViewModel';
+import classifyViewModel from '../viewmodel/ClassifyViewModel';
 import ItemData from '../common/bean/ItemData';
+import ClassifyModel from '../common/bean/ClassifyModel';
+import CourseModel from '../common/bean/CourseModel';
 
 /**
  * Home tab content
@@ -71,42 +73,74 @@ export default struct Home {
         .backgroundColor(Color.White)
         .borderRadius($r('app.float.home_grid_borderRadius'))
 
-        Text($r('app.string.home_list'))
-          .fontSize($r('app.float.normal_text_size'))
-          .fontWeight(FontWeight.Medium)
+
+
+        Text('热门推荐')
           .width(CommonConstants.FULL_PARENT)
+          .fontSize($r('app.float.title_line_height'))
+          .fontWeight(FontWeight.Bold)
           .margin({ top: $r('app.float.home_text_margin') })
 
-        Grid() {
-          ForEach(mainViewModel.getSecondGridData(), (secondItem: ItemData) => {
-            GridItem() {
+
+        //TODO:首页推送课程列表
+        List() {
+          //ForEach(classifyViewModel.getLinkData(), (classifyData: ClassifyModel) => {
+            ListItem(){
               Column() {
-                Text(secondItem.title)
-                  .fontSize($r('app.float.normal_text_size'))
-                  .fontWeight(FontWeight.Medium)
-                Text(secondItem.others)
-                  .margin({ top: $r('app.float.home_list_margin') })
-                  .fontSize($r('app.float.little_text_size'))
-                  .fontColor($r('app.color.home_grid_fontColor'))
+                ForEach(classifyViewModel.getLinkData()[0].courseList, (courseData: CourseModel) => {
+                  Row(){
+                    Image(courseData.imageUrl)
+                      .backgroundColor(Color.White)
+                      .borderRadius(7)
+                      .align(Alignment.TopStart)
+                      .width(CommonConstants.HOME_PAGE_COURSE_IMG_WIDTH)
+                      .height(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
+
+                    Column()
+                    {
+                      Text(courseData.courseName)
+                        .fontSize($r('app.float.title_line_height'))
+                        .fontWeight(FontWeight.Bold)
+                        .margin({ top: $r('app.float.home_text_margin') })
+                        .padding(10)
+                        //.align(Alignment.Center)
+
+                      Text(courseData.price.toString() + "元")
+                        .fontSize($r('app.float.normal_text_size'))
+                        .fontWeight(FontWeight.Medium)
+                        //.align(Alignment.Start)
+
+                      Row(){
+                        Text('1000+人正在观看')
+                          .fontSize($r('app.float.small_text_size'))
+                          .fontWeight(FontWeight.Medium)
+                          .fontColor(Color.Gray)
+                          .padding(10)
+                          //.align(Alignment.Start)
+
+                        Button("现在报名")
+                          .fontSize($r('app.float.small_text_size'))
+                          .padding(10)
+                      }
+
+                    }
+                    .height(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
+                    .width(CommonConstants.HOME_PAGE_COURSE_TEXT_WIDTH)
+                    .justifyContent(FlexAlign.SpaceAround)
+                  }
+                  .justifyContent(FlexAlign.SpaceBetween)
+                  .height(CommonConstants.GOODS_LIST_HEIGHT)
+                  .width(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
+                  .margin(5)
+                  .backgroundColor(Color.White)
+
+                })
               }
-              .alignItems(HorizontalAlign.Start)
             }
-            .padding({ top: $r('app.float.home_list_padding'), left: $r('app.float.home_list_padding') })
-            .borderRadius($r('app.float.home_backgroundImage_borderRadius'))
-            .align(Alignment.TopStart)
-            .backgroundImage(secondItem.img)
-            .backgroundImageSize(ImageSize.Cover)
-            .width(CommonConstants.FULL_PARENT)
-            .height(CommonConstants.FULL_PARENT)
-          }, secondItem => JSON.stringify(secondItem))
+            .height(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
+          //})
         }
         .width(CommonConstants.FULL_PARENT)
-        .height($r('app.float.home_secondGrid_height'))
-        .columnsTemplate('1fr 1fr')
-        .rowsTemplate('1fr 1fr')
-        .columnsGap($r('app.float.home_grid_columnsGap'))
-        .rowsGap($r('app.float.home_grid_rowGap'))
-        .margin({ bottom: $r('app.float.setting_button_bottom')})
       }
     }
     .height(CommonConstants.FULL_PARENT)

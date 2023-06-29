@@ -117,6 +117,7 @@ export default class CommonConstants {
   static readonly MAGNIFICATION: number = 2;
   static readonly MAX_DATA_LENGTH: number = 12;
 
+
   //个人页面
   /**
    * The entry ability tag.
@@ -217,4 +218,9 @@ export default class CommonConstants {
    * Text common max lines of the 1.
    */
   static readonly ONE_LINES: number = 1;
+
+  static readonly HOME_PAGE_COURSE_HEIGHT: string = '15%';
+  static readonly HOME_PAGE_COURSE_IMG_WIDTH: string = '37%';
+  static readonly HOME_PAGE_COURSE_TEXT_WIDTH: string = '63%';
+
 }
