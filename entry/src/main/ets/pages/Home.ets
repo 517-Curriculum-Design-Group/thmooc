@@ -69,7 +69,7 @@ struct MainPage {
 
       TabContent() {
         Community()
-      }
+      } 
       .padding({ left: $r('app.float.mainPage_padding'), right: $r('app.float.mainPage_padding') })
       .backgroundColor($r('app.color.mainPage_backgroundColor'))
       .tabBar(this.TabBuilder(CommonConstants.COMMUNITY_TITLE, CommonConstants.COMMUNITY_TAB_INDEX,
