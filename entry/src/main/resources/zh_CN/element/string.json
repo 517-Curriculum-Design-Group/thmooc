@@ -193,6 +193,10 @@
       "value": "清除缓存"
     },
     {
+      "name": "setting_alive_result",
+      "value": "在线客服"
+    },
+    {
       "name": "setting_list_privacy",
       "value": "隐私协议"
     },

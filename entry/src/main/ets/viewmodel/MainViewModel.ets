@@ -84,9 +84,10 @@ export class MainViewModel {
       new ItemData($r('app.string.setting_list_news'), $r("app.media.news"), $r("app.string.setting_toggle")),
       new ItemData($r('app.string.setting_list_data'), $r("app.media.data"), null),
       new ItemData($r('app.string.mylove_closure'), $r("app.media.like"), null),
-      new ItemData($r('app.string.setting_list_menu'), $r("app.media.menu"), null),
+      new ItemData($r('app.string.setting_list_menu'), $r("app.media.config"), null),
       new ItemData($r('app.string.setting_list_about'), $r("app.media.about"), null),
       new ItemData($r('app.string.setting_list_storage'), $r("app.media.storage"), null),
+      new ItemData($r('app.string.setting_alive_result'), $r("app.media.headset_one"), null),
       new ItemData($r('app.string.setting_list_privacy'), $r("app.media.privacy"), null)
     ];
     return settingListData;
