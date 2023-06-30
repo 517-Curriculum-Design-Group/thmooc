@@ -475,7 +475,7 @@ const LINK_DATA: LinkDataModel[] = [
     'superId': 8,
     'superName': '兴趣副业',
     'id': 53,
-    'courseName': '制作独立游戏与游戏开发入门',
+    'courseName': '嘉然今天吃什么',
     'imageUrl': $r('app.media.ic_img_13'),
     'price': 0
   },
