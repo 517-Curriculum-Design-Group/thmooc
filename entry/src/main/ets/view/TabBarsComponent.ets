@@ -86,7 +86,10 @@ export default struct TabBar {
               PutDownRefresh({ refreshText: $refreshText })
             }
             GoodsList()
-            Text($r('app.string.to_bottom')).fontSize(commonConst.NORMAL_FONT_SIZE).fontColor($r('app.color.gray'))
+            Text($r('app.string.to_bottom'))
+              .fontSize(commonConst.NORMAL_FONT_SIZE)
+              .fontColor($r('app.color.gray'))
+              .margin({top:30,bottom:30})
           }
           .width(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
         }
@@ -94,9 +97,6 @@ export default struct TabBar {
         .edgeEffect(EdgeEffect.Spring)
         .width(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
         .height(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
-        .onTouch((event) => {
-          this.putDownRefresh(event);
-        })
       }
       .tabBar(this.firstTabBar)
 
@@ -184,12 +184,15 @@ export default struct TabBar {
 
               })
             }
+            .height('100%')
             .backgroundColor(Color.White)
             .width(commonConst.GOODS_LIST_WIDTH)
+
           }
           .backgroundColor(Color.White)
           .justifyContent(FlexAlign.Center)
           .width(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
+
         }
         .backgroundColor(Color.White)
         .tabBar(this.otherTabBar(item, index))
