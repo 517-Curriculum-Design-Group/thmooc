@@ -171,8 +171,16 @@ const LINK_DATA: LinkDataModel[] = [
     'superId': 2,
     'superName': '有道英语',
     'id': 15,
-    'courseName': '"有道英语"口语突破训练：自信流利地表达',
+    'courseName': '有道英语口语突破训练：自信流利地表达',
     'imageUrl': $r('app.media.ic_img_15'),
+    'price': 120
+  },
+  {
+    'superId': 2,
+    'superName': '关注嘉然',
+    'id': 16,
+    'courseName': '关注嘉然喵，关注嘉然谢谢喵',
+    'imageUrl': $r('app.media.ic_img_16'),
     'price': 120
   },
   {
