@@ -66,9 +66,7 @@ export default struct Setting {
           Image($r('app.media.account'))
             .width($r('app.float.setting_account_size'))
             .height($r('app.float.setting_account_size'))
-          .onClick(() => {
-            return router.pushUrl({url: 'pages/PersonalPage'})
-          })
+
           Column() {
             Text($r('app.string.setting_account_name'))
               .fontSize($r('app.float.setting_account_fontSize'))
@@ -79,12 +77,15 @@ export default struct Setting {
           .alignItems(HorizontalAlign.Start)
           .margin({ left: $r('app.float.setting_account_margin') })
 
-          // Image($r('app.media.right_grey'))
-          //   .width($r('app.float.setting_jump_width'))
-          //   .height($r('app.float.setting_jump_height'))
-          //
+          Image($r('app.media.right_grey'))
+            .width(20)
+            .height(20)
+            .margin({left: 190})
 
         }
+        .onClick(() => {
+          return router.pushUrl({url: 'pages/PersonalPage'})
+        })
         .margin({ top: $r('app.float.setting_account_margin') })
         .alignItems(VerticalAlign.Center)
         .width(CommonConstants.FULL_PARENT)
