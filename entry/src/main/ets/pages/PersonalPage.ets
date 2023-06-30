@@ -83,7 +83,7 @@ struct PersonalPage {
           CommonUtils.alertDialog(context);
           // router.back()
         })
-      Image($r('app.media.ic_avatar'))
+      Image($r('app.media.account'))
         .width($r('app.float.avatar_size'))
         .height($r('app.float.avatar_size'))
         .alignSelf(ItemAlign.Center)
