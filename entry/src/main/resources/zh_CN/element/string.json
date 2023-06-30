@@ -322,7 +322,7 @@
     },
     {
       "name": "title_hobbies",
-      "value": "兴趣爱好（多选）"
+      "value": "课程方向（多选）"
     },
     {
       "name": "alert_dialog_message",
@@ -342,7 +342,7 @@
     },
     {
       "name": "text_title_hobbies",
-      "value": "兴趣爱好"
+      "value": "课程方向"
     }
   ]
 }
