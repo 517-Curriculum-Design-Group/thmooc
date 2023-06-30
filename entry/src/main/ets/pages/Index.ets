@@ -123,8 +123,8 @@ struct Index {
           .margin({top:30})
           .onClick(()=>{
             Logger.debug("跳转到注册页")
+            router.pushUrl({url:'pages/Register'})
           })
-
       }
 
       Row() {
@@ -139,7 +139,7 @@ struct Index {
     }
     .width(Const.FULL_WIDTH)
     .height(Const.FULL_HEIGHT)
-    .backgroundImage($r('app.media.cloud'))
+    .backgroundImage($r('app.media.R_C'))
     .backgroundImageSize(ImageSize.Cover)
     .onClick(()=>{
       Logger.info("Check Click")
