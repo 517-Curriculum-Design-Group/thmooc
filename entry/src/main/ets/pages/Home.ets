@@ -33,9 +33,6 @@ struct MainPage {
       Image(this.currentIndex === index ? selectedImg : normalImg)
         .width($r('app.float.mainPage_baseTab_size'))
         .height($r('app.float.mainPage_baseTab_size'))
-        .onClick(() => {
-
-        })
       Text(title)
         .margin({ top: $r('app.float.mainPage_baseTab_top') })
         .fontSize($r('app.float.main_tab_fontSize'))
@@ -85,7 +82,6 @@ struct MainPage {
       .backgroundColor($r('app.color.mainPage_backgroundColor'))
       .tabBar(this.TabBuilder(CommonConstants.MINE_TITLE, CommonConstants.MINE_TAB_INDEX,
         $r('app.media.mine_selected'), $r('app.media.mine_normal')))
-
     }
     .width(CommonConstants.FULL_PARENT)
     .backgroundColor(Color.White)
