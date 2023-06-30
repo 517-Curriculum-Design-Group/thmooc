@@ -109,7 +109,7 @@ export default struct TabBar {
           // .width(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
           // .height(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
           Row() {
-            List({ space: commonConst.LIST_ITEM_SPACE }) {
+            List() {
               LazyForEach(this.goodsList, (item) => {
                   ListItem() {
                     if(item.category === index){
@@ -126,6 +126,7 @@ export default struct TabBar {
                                 .margin({left:10})
                             }
                             .width('100%')
+
                             Image($r('app.media.account'))
                               .width(40)
                               .height(40)
@@ -162,7 +163,7 @@ export default struct TabBar {
                       .justifyContent(FlexAlign.Center)
                       .height(commonConst.GOODS_LIST_HEIGHT)
                       .width('100%')
-                      .margin({bottom:70})
+                      .margin({bottom:140})
                     }
                   }
                   // .onTouch((event: TouchEvent) => {
@@ -184,15 +185,13 @@ export default struct TabBar {
 
               })
             }
-            .height('100%')
             .backgroundColor(Color.White)
             .width(commonConst.GOODS_LIST_WIDTH)
-
+            .height('100%')
           }
           .backgroundColor(Color.White)
           .justifyContent(FlexAlign.Center)
           .width(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
-
         }
         .backgroundColor(Color.White)
         .tabBar(this.otherTabBar(item, index))

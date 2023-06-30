@@ -62,4 +62,37 @@ export const goodsInitialList: GoodsListItemType[] = [
     price: $r('app.string.price_999'),
     category:3,
   },
+
+  {
+    goodsImg: $r('app.media.disImg8'),
+    goodsName: $r('app.string.title1'),
+    advertising_language: $r('app.string.advertising_language'),
+    evaluate: $r('app.string.evaluate'),
+    price: $r('app.string.price_999'),
+    category:2,
+  },
+  {
+    goodsImg: $r('app.media.disImg9'),
+    goodsName: $r('app.string.title2'),
+    advertising_language: $r('app.string.advertising_language'),
+    evaluate: $r('app.string.evaluate'),
+    price: $r('app.string.price_999'),
+    category:2,
+  },
+  {
+    goodsImg: $r('app.media.disImg6'),
+    goodsName: $r('app.string.title3'),
+    advertising_language: $r('app.string.advertising_language'),
+    evaluate: $r('app.string.evaluate'),
+    price: $r('app.string.price_999'),
+    category:1,
+  },
+  {
+    goodsImg: $r('app.media.disImg7'),
+    goodsName: $r('app.string.title4'),
+    advertising_language: $r('app.string.advertising_language'),
+    evaluate: $r('app.string.evaluate'),
+    price: $r('app.string.price_999'),
+    category:3,
+  },
 ]

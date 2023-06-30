@@ -21,7 +21,7 @@ import commonConst from '../common/constants/CommonConstants';
  */
 const createListRange = () => {
   let result = [];
-  for (let i = 0; i < commonConst.MAGNIFICATION; i++) {
+  for (let i = 0; i < commonConst.MAGNIFICATION/2; i++) {
     result = [...result, ...goodsInitialList];
   }
   return result;
