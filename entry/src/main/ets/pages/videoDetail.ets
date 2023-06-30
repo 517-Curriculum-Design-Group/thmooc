@@ -10,6 +10,8 @@ struct videoDetail {
   @State curRate: PlaybackSpeed = PlaybackSpeed.Speed_Forward_1_00_X
   @State isAutoPlay: boolean = false
   @State showControls: boolean = true
+  @State isClick: boolean = false
+  @State isChange: boolean = false
   controller: VideoController = new VideoController()
   scroller: Scroller = new Scroller()
 
@@ -86,6 +88,7 @@ struct videoDetail {
                   Image($r('app.media.account'))
                     .width($r('app.float.setting_account_size'))
                     .height($r('app.float.setting_account_size'))
+                  .margin({left:6})
                   Column() {
                     Text('大熊课堂')
                       .fontSize($r('app.float.setting_account_fontSize'))
@@ -94,7 +97,7 @@ struct videoDetail {
                       .fontSize($r('app.float.little_text_size'))
                       .margin({ top: $r('app.float.setting_name_margin') })
                   }
-                  .width('100%')
+                  .width('70%')
                   .margin({ left: $r('app.float.setting_account_margin') })
                 }
 
@@ -122,6 +125,8 @@ struct videoDetail {
                   .color('#e5e5e5')
                   .margin({ top:53 })
 
+                Image($r('app.media.ad')).width('100%')
+
               }
               .width('100%')
             }
@@ -134,13 +139,28 @@ struct videoDetail {
         //容器位于最底部
         Stack() {
           Row(){
-            Column(){
+              Row(){
 
-            }
-            Column(){
+                Image(this.isClick ? $r('app.media.like'):$r('app.media.nofill_like') ).width($r('app.float.mainPage_baseTab_size')).height($r('app.float.mainPage_baseTab_size'))
 
-            }
-            Button("立即购买").height('100')
+                Text('想学').fontColor(Color.Gray).margin({left:5})
+              }.width('50%')
+              .height('100%')
+            .justifyContent(FlexAlign.Center)
+            .onClick(()=>{
+              this.isClick = !this.isClick
+            })
+
+          Row(){
+            Button(this.isChange?"已购买":"+  立即购买").height('40').backgroundColor('#f97316').width(150)
+              .onClick(()=>{
+                this.isChange = !this.isChange
+              })
+          }
+          .width('50%')
+          .justifyContent(FlexAlign.Center)
+
+
           }
             .width('100%')
             .height('100%')
@@ -148,8 +168,8 @@ struct videoDetail {
         }
         .width('100%')
         .height('10%')
-
-
+        .border({ width: {top:2} })
+        .borderColor('#d4d4d8')
       }
       .width('100%')
       .height('100%')
