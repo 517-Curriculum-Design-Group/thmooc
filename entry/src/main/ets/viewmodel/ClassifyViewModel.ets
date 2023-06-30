@@ -59,7 +59,7 @@ const LINK_DATA: LinkDataModel[] = [
     'superId': 1,
     'superName': '特别推荐',
     'id': 1,
-    'courseName': '0基础躺学日语听说试听课程',
+    'courseName': ' vtuber精品课',
     'imageUrl': $r('app.media.ic_img_1'),
     'price': 0
   },
@@ -177,9 +177,9 @@ const LINK_DATA: LinkDataModel[] = [
   },
   {
     'superId': 2,
-    'superName': '关注嘉然',
+    'superName': '有道考研',
     'id': 16,
-    'courseName': '关注嘉然喵，关注嘉然谢谢喵',
+    'courseName': '嘉然的考研指导',
     'imageUrl': $r('app.media.ic_img_16'),
     'price': 120
   },
