@@ -135,6 +135,35 @@
     {
       "name": "divider_color",
       "value": "#0D182431"
+    },
+    {
+      "name": "index_background",
+      "value": "#F1F3F5"
+    },
+    {
+      "name": "recent_search_font_color",
+      "value": "#182431"
+    },
+    {
+      "name": "no_search_font_color",
+      "value": "#99182431"
+    },
+
+    {
+      "name": "caret_color",
+      "value": "#33182431"
+    },
+    {
+      "name": "border_color",
+      "value": "#33182431"
+    },
+    {
+      "name": "search_font_color",
+      "value": "#007DFF"
+    },
+    {
+      "name": "flex_layout_color",
+      "value": "#E5E8EA"
     }
   ]
 }

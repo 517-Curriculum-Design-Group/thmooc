@@ -348,6 +348,18 @@
     {
       "name": "text_title_hobbies",
       "value": "Hobbies"
+    },
+    {
+      "name": "recent_searches",
+      "value": "Recent Searches"
+    },
+    {
+      "name": "no_search_content",
+      "value": "There is no search content"
+    },
+    {
+      "name": "search",
+      "value": "Search"
     }
   ]
 }

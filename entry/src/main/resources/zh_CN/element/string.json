@@ -347,6 +347,18 @@
     {
       "name": "text_title_hobbies",
       "value": "课程方向"
+    },
+    {
+      "name": "recent_searches",
+      "value": "最近搜索"
+    },
+    {
+      "name": "no_search_content",
+      "value": "没有搜索内容"
+    },
+    {
+      "name": "search",
+      "value": "搜索"
     }
   ]
 }

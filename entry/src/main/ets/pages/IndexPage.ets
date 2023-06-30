@@ -19,7 +19,7 @@ import CourseModel from '../common/bean/CourseModel';
 import CourseItem from '../view/CourseItem';
 import ClassifyItem from '../view/ClassityItem';
 import ClassifyViewModel from '../viewmodel/ClassifyViewModel';
-
+import router from '@ohos.router';
 
 @Entry
 @Component
@@ -85,8 +85,10 @@ export default struct IndexPage {
           .placeholderColor(Color.Grey)
           .placeholderFont({ size: 14, weight: 400 })
           .textFont({ size: 14, weight: 400 })
-          .onSubmit((value: string) => {
-            this.searchSubmitValue = value
+          .onClick(() => {
+            router.pushUrl({
+              url:'pages/SearchPage'
+            })
           })
           .onChange((value: string) => {
             this.searchChangeValue = value
