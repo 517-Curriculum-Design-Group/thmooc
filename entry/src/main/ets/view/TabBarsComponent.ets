@@ -115,6 +115,26 @@ export default struct TabBar {
                     if(item.category === index){
                       Row() {
                         Column() {
+                          Row(){
+                            Row(){
+                              Image($r('app.media.account'))
+                                .width(40)
+                                .height(40)
+                                .margin({bottom:10,top:10})
+                              Text($r('app.string.setting_account_name'))
+                                .fontSize(18)
+                                .margin({left:10})
+                            }
+                            .width('100%')
+                            Image($r('app.media.account'))
+                              .width(40)
+                              .height(40)
+                              .margin({bottom:10})
+                            Text($r('app.string.setting_account_name'))
+                              .fontSize(18)
+                              .margin({left:10})
+                          }
+                          .width('100%')
                           Text(item?.goodsName)
                             .fontSize(18).fontWeight(50).width('100%').margin({bottom:5})
                           // .margin({ bottom: commonConst.BIGGER_FONT_SIZE })
@@ -145,30 +165,33 @@ export default struct TabBar {
                       .margin({bottom:70})
                     }
                   }
-                  .onTouch((event: TouchEvent) => {
-                    switch (event.type) {
-                      case TouchType.Down:
-                        this.startTouchOffsetY = event.touches[0].y;
-                        break;
-                      case TouchType.Up:
-                        this.startTouchOffsetY = event.touches[0].y;
-                        break;
-                      case TouchType.Move:
-                        if(this.startTouchOffsetY - this.endTouchOffsetY > 0) {
-                          this.goodsList.pushData();
-                        }
-                        break;
-                    }
-                  })
+                  // .onTouch((event: TouchEvent) => {
+                  //   switch (event.type) {
+                  //     case TouchType.Down:
+                  //       this.startTouchOffsetY = event.touches[0].y;
+                  //       break;
+                  //     case TouchType.Up:
+                  //       this.startTouchOffsetY = event.touches[0].y;
+                  //       break;
+                  //     case TouchType.Move:
+                  //       if(this.startTouchOffsetY - this.endTouchOffsetY > 0) {
+                  //         this.goodsList.pushData();
+                  //       }
+                  //       break;
+                  //   }
+                  // })
 
 
               })
             }
+            .backgroundColor(Color.White)
             .width(commonConst.GOODS_LIST_WIDTH)
           }
+          .backgroundColor(Color.White)
           .justifyContent(FlexAlign.Center)
           .width(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
         }
+        .backgroundColor(Color.White)
         .tabBar(this.otherTabBar(item, index))
       })
     }

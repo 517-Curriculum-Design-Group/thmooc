@@ -19,27 +19,59 @@ import { ListDataSource } from '../viewmodel/ListDataSource';
 @Component
 export default struct GoodsList {
   @Provide goodsListData: ListDataSource = new ListDataSource();
-  private startTouchOffsetY: number = 0;
-  private endTouchOffsetY: number = 0;
+  // private startTouchOffsetY: number = 0;
+  // private endTouchOffsetY: number = 0;
 
 
   build() {
     Row() {
       List({ space: commonConst.LIST_ITEM_SPACE }) {
-        LazyForEach(this.goodsListData, (item) => {
+        LazyForEach(this.goodsListData,(item) => {
           ListItem() {
             Row() {
               Column() {
-                  Text(item?.goodsName)
-                    .fontSize(18).fontWeight(50).width('100%').margin({bottom:5})
+                // Row() {
+                //   Image($r('app.media.account'))
+                //     .width(40)
+                //     .height(40)
+                //   Column() {
+                //     Text($r('app.string.setting_account_name'))
+                //       .fontSize(18)
+                //       .margin({left:10})
+                //   }
+                //   .alignItems(HorizontalAlign.Start)
+                // }
+                // .margin({ top:20,bottom:20 })
+                // .alignItems(VerticalAlign.Center)
+                // .width(commonConst.FULL_PARENT)
+                // .height($r('app.float.setting_account_height'))
+                // .borderRadius($r('app.float.setting_account_borderRadius'))
+                Row(){
+                    Image($r('app.media.account'))
+                      .width(40)
+                      .height(40)
+                      .margin({bottom:10,top:10})
+                      Text($r('app.string.setting_account_name'))
+                        .fontSize(18)
+                        .margin({left:10})
+                }
+                .width('100%')
+
+
+                Text(item?.goodsName)
+                    .fontSize(22).fontWeight(50).width('100%').margin({bottom:5})
                     // .margin({ bottom: commonConst.BIGGER_FONT_SIZE })
                 Image(item?.goodsImg)
                   .width('100%')
                   .height(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
                 Row(){
                   Row(){
-                    Image($r('app.media.highlights')).width($r('app.float.mainPage_baseTab_size')).height($r('app.float.mainPage_baseTab_size'))
-                    Text('收藏').fontColor(Color.Gray).margin({left:5})
+                    Image($r('app.media.highlights'))
+                      .width($r('app.float.mainPage_baseTab_size'))
+                      .height($r('app.float.mainPage_baseTab_size'))
+                    Text('收藏')
+                      .fontColor(Color.Gray)
+                      .margin({left:5})
                   }
                   Row(){
                     Image($r('app.media.comments')).width($r('app.float.mainPage_baseTab_size')).height($r('app.float.mainPage_baseTab_size'))
@@ -78,27 +110,30 @@ export default struct GoodsList {
             .justifyContent(FlexAlign.Center)
             .height(commonConst.GOODS_LIST_HEIGHT)
             .width('100%')
-            .margin({bottom:70})
+            .margin({bottom:120})
+
           }
-          .onTouch((event: TouchEvent) => {
-            switch (event.type) {
-              case TouchType.Down:
-                this.startTouchOffsetY = event.touches[0].y;
-                break;
-              case TouchType.Up:
-                this.startTouchOffsetY = event.touches[0].y;
-                break;
-              case TouchType.Move:
-                if(this.startTouchOffsetY - this.endTouchOffsetY > 0) {
-                  this.goodsListData.pushData();
-                }
-                break;
-            }
-          })
+          // .onTouch((event: TouchEvent) => {
+          //   switch (event.type) {
+          //     case TouchType.Down:
+          //       this.startTouchOffsetY = event.touches[0].y;
+          //       break;
+          //     case TouchType.Up:
+          //       this.startTouchOffsetY = event.touches[0].y;
+          //       break;
+          //     case TouchType.Move:
+          //       if(this.startTouchOffsetY - this.endTouchOffsetY > 0) {
+          //         this.goodsListData.pushData();
+          //       }
+          //       break;
+          //   }
+          // })
         })
       }
+      .backgroundColor(Color.White)
       .width(commonConst.GOODS_LIST_WIDTH)
     }
+    .backgroundColor(Color.White)
     .justifyContent(FlexAlign.Center)
     .width(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
   }

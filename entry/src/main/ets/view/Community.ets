@@ -18,7 +18,7 @@ export default struct Community{
       .title(CommonConstants.STORE)
       .titleMode(NavigationTitleMode.Mini)
       .hideBackButton(true)
-      
+
     }
     .height(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
     .backgroundColor($r('app.color.primaryBgColor'))
