@@ -80,68 +80,60 @@ export default struct Home {
           .fontWeight(FontWeight.Bold)
           .margin({ top: $r('app.float.home_text_margin') })
 
-
         Column() {
-          // Column(){
-              Column() {
-                ForEach(classifyViewModel.getLinkData()[1].courseList, (courseData: CourseModel) => {
-                  Row(){
-                    Image(courseData.imageUrl)
-                      .backgroundColor(Color.White)
-                      .borderRadius(7)
-                      .align(Alignment.TopStart)
-                      .width(CommonConstants.HOME_PAGE_COURSE_IMG_WIDTH)
-                      .height(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
-
-                    Column()
-                    {
-                      Text(courseData.courseName)
-                        .fontSize($r('app.float.title_line_height'))
-                        .fontWeight(FontWeight.Bold)
-                        .margin({ top: $r('app.float.home_text_margin') })
-                        //.padding(10)
-                        //.align(Alignment.Center)
-
-                      Text(courseData.price.toString() + "元")
-                        .fontSize($r('app.float.header_font_size'))
-                        .fontColor($r('app.color.price_color'))
-
-                      Row(){
-                        Text('1000+人正在观看')
-                          .fontSize($r('app.float.small_text_size'))
-                          .fontWeight(FontWeight.Medium)
-                          .fontColor(Color.Gray)
-                          //.padding(10)
-                          //.align(Alignment.Start)
-
-                        Button("现在报名")
-                          .fontSize($r('app.float.small_text_size'))
-                          //.padding(10)
-                      }
-
-                    }
-                    .height(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
-                    .width(CommonConstants.HOME_PAGE_COURSE_TEXT_WIDTH)
-                    .justifyContent(FlexAlign.SpaceAround)
-                  }
-                  .justifyContent(FlexAlign.SpaceBetween)
-                  .height(CommonConstants.GOODS_LIST_HEIGHT)
-                  .width(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
-                  .margin(5)
+          Column() {
+            ForEach(classifyViewModel.getLinkData()[1].courseList, (courseData: CourseModel) => {
+              Row(){
+                Image(courseData.imageUrl)
                   .backgroundColor(Color.White)
+                  .borderRadius(7)
+                  .align(Alignment.TopStart)
+                  .width(CommonConstants.HOME_PAGE_COURSE_IMG_WIDTH)
+                  .height(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
 
-                })
+                Column()
+                {
+                  Text(courseData.courseName)
+                    .fontSize($r('app.float.title_line_height'))
+                    .fontWeight(FontWeight.Bold)
+                    .margin({ top: $r('app.float.home_text_margin') })
+
+                  Text(courseData.price.toString() + "元")
+                    .fontSize($r('app.float.header_font_size'))
+                    .fontColor($r('app.color.price_color'))
+
+                  Row(){
+                    Text('1000+人正在观看')
+                      .fontSize($r('app.float.small_text_size'))
+                      .fontWeight(FontWeight.Medium)
+                      .fontColor(Color.Gray)
+
+                    Button("现在报名")
+                      .fontSize($r('app.float.small_text_size'))
+                  }
+
+                }
+                .height(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
+                .width(CommonConstants.HOME_PAGE_COURSE_TEXT_WIDTH)
+                .justifyContent(FlexAlign.SpaceAround)
               }
-            }
-            // .height(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
-        }
-        .width(CommonConstants.FULL_PARENT)
-        .width('100%')
-        .margin({bottom:20})
-      }
+              .justifyContent(FlexAlign.SpaceBetween)
+              .height(CommonConstants.GOODS_LIST_HEIGHT)
+              .width(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
+              .margin(5)
+              .backgroundColor(Color.White)
 
+            })
+          }
+        }
+
+      }
+      .width(CommonConstants.FULL_PARENT)
+      .width('100%')
+      .margin({bottom:20})
     }
-    //.height(CommonConstants.FULL_PARENT)
-    //.margin({ bottom:90})
+
+  }
+
 
 }
