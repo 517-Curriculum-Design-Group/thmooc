@@ -204,7 +204,6 @@ export default struct Home {
 
       }
       .width(CommonConstants.FULL_PARENT)
-      .width('100%')
       .margin({bottom:20})
     }
 
