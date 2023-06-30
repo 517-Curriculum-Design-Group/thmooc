@@ -173,6 +173,7 @@ export default struct Home {
           })
         }
 
+        Text($r('app.string.to_bottom')).fontSize(CommonConstants.NORMAL_FONT_SIZE).fontColor($r('app.color.gray'))
         }
 
       }
