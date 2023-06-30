@@ -5,7 +5,7 @@ import Logger from '../common/utils/Logger'
 @Entry
 @Component
 struct Index {
-
+  //TODO:各个页面传递用户名
   @State userName: string = '' //用户名使用手机号
   @State password: string = '' //密码
   @State isSelect: boolean = false //隐私协议是否勾选

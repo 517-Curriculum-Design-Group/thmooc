@@ -171,8 +171,16 @@ const LINK_DATA: LinkDataModel[] = [
     'superId': 2,
     'superName': '有道英语',
     'id': 15,
-    'courseName': '"有道英语"口语突破训练：自信流利地表达',
+    'courseName': '有道英语口语突破训练：自信流利地表达',
     'imageUrl': $r('app.media.ic_img_15'),
+    'price': 120
+  },
+  {
+    'superId': 2,
+    'superName': '关注嘉然',
+    'id': 16,
+    'courseName': '关注嘉然喵，关注嘉然谢谢喵',
+    'imageUrl': $r('app.media.ic_img_16'),
     'price': 120
   },
   {
@@ -467,7 +475,7 @@ const LINK_DATA: LinkDataModel[] = [
     'superId': 8,
     'superName': '兴趣副业',
     'id': 53,
-    'courseName': '制作独立游戏与游戏开发入门',
+    'courseName': '嘉然今天吃什么',
     'imageUrl': $r('app.media.ic_img_13'),
     'price': 0
   },

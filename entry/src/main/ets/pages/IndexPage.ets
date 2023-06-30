@@ -24,12 +24,14 @@ import ClassifyViewModel from '../viewmodel/ClassifyViewModel';
 @Entry
 @Component
 export default struct IndexPage {
-
   @State currentClassify: number = 0; // selected classify index.
   @State requestSuccess: boolean = false; // is loading data.
   private classifyList: Array<ClassifyModel> = [];
   private classifyScroller: Scroller = new Scroller();
   private scroller: Scroller = new Scroller();
+  private searchController: SearchController = new SearchController()
+  @State searchChangeValue: string = ''
+  @State searchSubmitValue: string = ''
 
   aboutToAppear() {
     // loading data.
@@ -68,51 +70,77 @@ export default struct IndexPage {
   }
 
   build() {
-    Row() {
-      if (this.requestSuccess) {
-        List({ scroller: this.classifyScroller }) {
-          ForEach(this.classifyList, (item: ClassifyModel, index: number) => {
-            ListItem() {
-              ClassifyItem({
-                classifyName: item.classifyName,
-                isSelected: this.currentClassify === index,
-                onClickAction: this.classifyChangeAction.bind(this, index, true)
-              })
-            }
-          }, (item: ClassifyModel) => item.classifyName + this.currentClassify)
-        }
-        .height(Constants.FULL_PERCENT)
-        .width($r('app.float.classify_item_width'))
-        .backgroundColor($r('app.color.classify_background'))
-        .scrollBar(BarState.Off)
 
-        List({ scroller: this.scroller }) {
-          ForEach(this.classifyList, (classifyItem: ClassifyModel) => {
-            ListItemGroup({
-              header: this.ClassifyHeader(classifyItem.classifyName),
-              space: Constants.COURSE_ITEM_PADDING
-            }) {
-              ForEach(classifyItem.courseList, (courseItem: CourseModel) => {
+
+    Row() {
+
+      Column() {
+
+        Search({ value: this.searchChangeValue, placeholder: 'JS从入门到入土', controller: this.searchController })
+          .searchButton('搜索')
+          .width('100%')
+          .height(50)
+          .margin({ top: 15 ,bottom:15})
+          .backgroundColor('#F5F5F5')
+          .placeholderColor(Color.Grey)
+          .placeholderFont({ size: 14, weight: 400 })
+          .textFont({ size: 14, weight: 400 })
+          .onSubmit((value: string) => {
+            this.searchSubmitValue = value
+          })
+          .onChange((value: string) => {
+            this.searchChangeValue = value
+          })
+
+        Row(){
+          if (this.requestSuccess) {
+            List({ scroller: this.classifyScroller }) {
+              ForEach(this.classifyList, (item: ClassifyModel, index: number) => {
                 ListItem() {
-                  CourseItem({ itemStr: JSON.stringify(courseItem) })
+                  ClassifyItem({
+                    classifyName: item.classifyName,
+                    isSelected: this.currentClassify === index,
+                    onClickAction: this.classifyChangeAction.bind(this, index, true)
+                  })
                 }
-              }, (courseItem: CourseModel) => `${courseItem.courseId}`)
+              }, (item: ClassifyModel) => item.classifyName + this.currentClassify)
             }
-          }, (item: ClassifyModel) => `${item.classifyId}`)
+            .height(Constants.FULL_PERCENT)
+            .width($r('app.float.classify_item_width'))
+            .backgroundColor($r('app.color.classify_background'))
+            .scrollBar(BarState.Off)
+
+            List({ scroller: this.scroller }) {
+              ForEach(this.classifyList, (classifyItem: ClassifyModel) => {
+                ListItemGroup({
+                  header: this.ClassifyHeader(classifyItem.classifyName),
+                  space: Constants.COURSE_ITEM_PADDING
+                }) {
+                  ForEach(classifyItem.courseList, (courseItem: CourseModel) => {
+                    ListItem() {
+                      CourseItem({ itemStr: JSON.stringify(courseItem) })
+                    }
+                  }, (courseItem: CourseModel) => `${courseItem.courseId}`)
+                }
+              }, (item: ClassifyModel) => `${item.classifyId}`)
+            }
+            .padding({ left: $r('app.float.item_padding_left'), right: $r('app.float.course_item_padding')})
+            .margin({ bottom:90})
+            .sticky(StickyStyle.Header)
+            .layoutWeight(1)
+            .edgeEffect(EdgeEffect.None)
+            .onScrollIndex((start: number) => this.classifyChangeAction(start, false))
+          } else {
+            Text($r('app.string.loading'))
+              .fontFamily($r('app.string.hei_ti_medium'))
+              .textAlign(TextAlign.Center)
+              .height(Constants.FULL_PERCENT)
+              .width(Constants.FULL_PERCENT)
+          }
         }
-        .padding({ left: $r('app.float.item_padding_left'), right: $r('app.float.course_item_padding') })
-        .sticky(StickyStyle.Header)
-        .layoutWeight(1)
-        .edgeEffect(EdgeEffect.None)
-        .onScrollIndex((start: number) => this.classifyChangeAction(start, false))
-      } else {
-        Text($r('app.string.loading'))
-          .fontFamily($r('app.string.hei_ti_medium'))
-          .textAlign(TextAlign.Center)
-          .height(Constants.FULL_PERCENT)
-          .width(Constants.FULL_PERCENT)
+        .backgroundColor($r('app.color.base_background'))
       }
-    }
-    .backgroundColor($r('app.color.base_background'))
+        }
+
   }
 }
