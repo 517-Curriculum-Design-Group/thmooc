@@ -4,6 +4,7 @@ import classifyViewModel from '../viewmodel/ClassifyViewModel';
 import ItemData from '../common/bean/ItemData';
 import ClassifyModel from '../common/bean/ClassifyModel';
 import CourseModel from '../common/bean/CourseModel';
+import router from '@ohos.router';
 
 /**
  * Home tab content
@@ -14,6 +15,8 @@ export default struct Home {
   private searchController: SearchController = new SearchController()
   @State searchChangeValue: string = ''
   @State searchSubmitValue: string = ''
+  @State cname: string ='';
+  @State cprice: number = 0;
 
 
   build() {
@@ -121,6 +124,17 @@ export default struct Home {
               .width(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
               .margin(5)
               .backgroundColor(Color.White)
+              //这部分就是传参，应该可以直接复用
+              .onClick(()=>{
+                this.cname = courseData.courseName
+                this.cprice = courseData.price
+                router.pushUrl({
+                  url:'pages/videoDetail',
+                  params: {cnameParm: this.cname,
+                    cpriceParm: this.cprice}
+                })
+              })
+              //结束
             })
           }
 
@@ -165,11 +179,23 @@ export default struct Home {
               .width(CommonConstants.HOME_PAGE_COURSE_TEXT_WIDTH)
               .justifyContent(FlexAlign.SpaceAround)
             }
+
             .justifyContent(FlexAlign.SpaceBetween)
             .height(CommonConstants.GOODS_LIST_HEIGHT)
             .width(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
             .margin(5)
             .backgroundColor(Color.White)
+            //这部分就是传参，可以直接复用
+            .onClick(()=>{
+              this.cname = courseData.courseName
+              this.cprice = courseData.price
+              router.pushUrl({
+                url:'pages/videoDetail',
+                params: {cnameParm: this.cname,
+                  cpriceParm: this.cprice}
+              })
+            })
+            //结束
           })
         }
 

@@ -48,7 +48,7 @@ struct videoDetail {
                   Text("视频评分：4.7")
                     .fontSize(18)
                     .fontColor('#fbbf24')
-                  Text('目前有' + this.GetRandomNum(200, 500).toString() + '人在学')
+                  Text('目前有' + this.GetRandomNum(800, 1500).toString() + '人在学')
                     .width("100%")
                     .padding({ left: 20 })
                     .fontSize(14)
@@ -117,15 +117,15 @@ struct videoDetail {
                 "主要内容：本课程首先向学生介绍与课程及教学相关的前沿问题，主要通过专家讲座的形式，阐释不同的学者对课程与教学的不同认识，引导学生形成自己的课程与教学观念，让学生了解当代课程与教学改革的基本趋势，能够运用所学解决课程与教学实际问题，并掌握研究相关问题的原则和方法。\n\n" +
                 "主要内容包括：教学哲学的价值论维度、异域教学思想本土化的思考、教学理解的意义之维、美国通识教育与课程、教学认识的活动机制、两会课程简介、教学艺术若干理论问题的思考 、PCK的内涵、特征与发展趋势、课程组织与类型、教学的概念与本质。\n\n")
                   .textOverflow({ overflow: TextOverflow.None })
-                  .margin({ left: 8, top: 8, right: 8, bottom: 8 })
+                  .margin({ left: 8, top: 8, right: 8})
 
 
                 Divider()
                   .strokeWidth(10)
                   .color('#e5e5e5')
-                  .margin({ top:53 })
+                  .margin({ top:2 })
 
-                Image($r('app.media.ad')).width('100%')
+                Image($r('app.media.ad')).width('100%').margin({bottom: 8 })
 
               }
               .width('100%')
