@@ -15,6 +15,7 @@ export default struct Home {
   @State searchChangeValue: string = ''
   @State searchSubmitValue: string = ''
 
+
   build() {
     Scroll() {
       Column({ space: CommonConstants.COMMON_SPACE }) {
@@ -80,8 +81,8 @@ export default struct Home {
           .margin({ top: $r('app.float.home_text_margin') })
 
 
-        List() {
-            ListItem(){
+        Column() {
+          // Column(){
               Column() {
                 ForEach(classifyViewModel.getLinkData()[1].courseList, (courseData: CourseModel) => {
                   Row(){
@@ -132,7 +133,7 @@ export default struct Home {
                 })
               }
             }
-            .height(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
+            // .height(CommonConstants.LAYOUT_WIDTH_OR_HEIGHT)
         }
         .width(CommonConstants.FULL_PARENT)
         .width('100%')
@@ -142,5 +143,5 @@ export default struct Home {
     }
     //.height(CommonConstants.FULL_PARENT)
     //.margin({ bottom:90})
-  }
+
 }
