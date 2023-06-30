@@ -174,15 +174,15 @@
     },
     {
       "name": "setting_list_news",
-      "value": "推送通知"
+      "value": "消息通知"
     },
     {
       "name": "setting_list_data",
-      "value": "数据管理"
+      "value": "课程管理"
     },
     {
       "name": "setting_list_menu",
-      "value": "菜单设置"
+      "value": "设置"
     },
     {
       "name": "setting_list_about",
