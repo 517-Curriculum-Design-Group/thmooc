@@ -85,7 +85,7 @@ export default struct IndexPage {
           .placeholderColor(Color.Grey)
           .placeholderFont({ size: 14, weight: 400 })
           .textFont({ size: 14, weight: 400 })
-          .onClick(() => {
+          .onSubmit(() => {
             router.pushUrl({
               url:'pages/SearchPage'
             })
