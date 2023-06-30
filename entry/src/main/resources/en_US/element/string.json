@@ -193,12 +193,16 @@
       "value": "清除缓存"
     },
     {
+      "name": "setting_book_mark",
+      "value": "图书商城"
+    },
+    {
       "name": "setting_alive_result",
       "value": "在线客服"
     },
     {
       "name": "setting_list_privacy",
-      "value": "Privacy Agreement"
+      "value": "满意度调研"
     },
     {
       "name": "setting_button",
