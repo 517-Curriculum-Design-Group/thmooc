@@ -7,6 +7,7 @@
     "pages/videoDetail",
     "pages/Register",
     "pages/PersonalPage",
-    "pages/SearchPage"
+    "pages/SearchPage",
+    "pages/CommunityDetail"
   ]
 }

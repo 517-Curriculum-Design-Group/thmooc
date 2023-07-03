@@ -27,6 +27,8 @@ export interface GoodsListItemType {
   evaluate: Resource;
   price: Resource;
   category: Number;
+  cover: Resource;
+  video: Resource;
 }
 
 export const goodsInitialList: GoodsListItemType[] = [
@@ -37,6 +39,8 @@ export const goodsInitialList: GoodsListItemType[] = [
     evaluate: $r('app.string.evaluate'),
     price: $r('app.string.price_199'),
     category:0,
+    cover:$r('app.media.goodsImg'),
+    video: $rawfile('test1.mp4')
   },
   {
     goodsImg: $r('app.media.disImg2'),
@@ -45,6 +49,8 @@ export const goodsInitialList: GoodsListItemType[] = [
     evaluate: $r('app.string.evaluate'),
     price: $r('app.string.price_265'),
     category:1,
+    cover:$r('app.media.goodsImg_2'),
+    video: $rawfile('test2.mp4')
   },
   {
     goodsImg: $r('app.media.disImg4'),
@@ -53,6 +59,8 @@ export const goodsInitialList: GoodsListItemType[] = [
     evaluate: $r('app.string.evaluate'),
     price: $r('app.string.price_810'),
     category:2,
+    cover:$r('app.media.goodsImg_2'),
+    video: $rawfile('test2.mp4')
   },
   {
     goodsImg: $r('app.media.disImg5'),
@@ -61,6 +69,8 @@ export const goodsInitialList: GoodsListItemType[] = [
     evaluate: $r('app.string.evaluate'),
     price: $r('app.string.price_999'),
     category:3,
+    cover:$r('app.media.goodsImg'),
+    video: $rawfile('test1.mp4')
   },
 
   {
@@ -70,6 +80,8 @@ export const goodsInitialList: GoodsListItemType[] = [
     evaluate: $r('app.string.evaluate'),
     price: $r('app.string.price_999'),
     category:2,
+    cover:$r('app.media.goodsImg_2'),
+    video: $rawfile('test2.mp4')
   },
   {
     goodsImg: $r('app.media.disImg9'),
@@ -78,6 +90,8 @@ export const goodsInitialList: GoodsListItemType[] = [
     evaluate: $r('app.string.evaluate'),
     price: $r('app.string.price_999'),
     category:2,
+    cover:$r('app.media.goodsImg'),
+    video: $rawfile('test1.mp4')
   },
   {
     goodsImg: $r('app.media.disImg6'),
@@ -86,6 +100,8 @@ export const goodsInitialList: GoodsListItemType[] = [
     evaluate: $r('app.string.evaluate'),
     price: $r('app.string.price_999'),
     category:1,
+    cover:$r('app.media.goodsImg_2'),
+    video: $rawfile('test2.mp4')
   },
   {
     goodsImg: $r('app.media.disImg7'),
@@ -94,5 +110,7 @@ export const goodsInitialList: GoodsListItemType[] = [
     evaluate: $r('app.string.evaluate'),
     price: $r('app.string.price_999'),
     category:3,
+    cover:$r('app.media.goodsImg'),
+    video: $rawfile('test1.mp4')
   },
 ]

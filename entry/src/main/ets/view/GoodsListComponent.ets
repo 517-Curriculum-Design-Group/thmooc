@@ -15,6 +15,7 @@
 
 import commonConst from '../common/constants/CommonConstants';
 import { ListDataSource } from '../viewmodel/ListDataSource';
+import router from '@ohos.router';
 
 @Component
 export default struct GoodsList {
@@ -63,6 +64,15 @@ export default struct GoodsList {
                 Image(item?.goodsImg)
                   .width('100%')
                   .height(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
+                  .onClick(()=>{
+                    router.pushUrl({
+                      url:'pages/CommunityDetail',
+                      params:{
+                        currentVideo : item.video,
+                        currentCover : item.cover
+                      }
+                    })
+                  })
                 Row(){
                   Row(){
                     Image($r('app.media.highlights'))
