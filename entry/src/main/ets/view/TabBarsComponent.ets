@@ -107,16 +107,16 @@ export default struct TabBar {
                       Row() {
                         Column() {
                           Row(){
-                            Row(){
-                              Image($r('app.media.account'))
-                                .width(40)
-                                .height(40)
-                                .margin({bottom:10,top:10})
-                              Text($r('app.string.setting_account_name'))
-                                .fontSize(18)
-                                .margin({left:10})
-                            }
-                            .width('100%')
+                            // Row(){
+                            //   Image($r('app.media.account'))
+                            //     .width(40)
+                            //     .height(40)
+                            //     .margin({bottom:10,top:10})
+                            //   Text($r('app.string.setting_account_name'))
+                            //     .fontSize(18)
+                            //     .margin({left:10})
+                            // }
+                            // .width('100%')
 
                             Image($r('app.media.account'))
                               .width(40)
