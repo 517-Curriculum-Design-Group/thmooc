@@ -49,6 +49,7 @@ export default struct Setting {
     })
   }
 
+
   build() {
     Scroll() {
       Column({ space: CommonConstants.COMMON_SPACE }) {
@@ -62,34 +63,93 @@ export default struct Setting {
         .width(CommonConstants.FULL_PARENT)
         .alignItems(HorizontalAlign.Start)
 
-        Row() {
+        // Row() {
+        //   Row() {
+        //     Image($r('app.media.account'))
+        //       .width($r('app.float.setting_account_size'))
+        //       .height($r('app.float.setting_account_size'))
+        //     Column() {
+        //       Text($r('app.string.setting_account_name'))
+        //         .fontSize($r('app.float.setting_account_fontSize'))
+        //       Text($r('app.string.setting_account_signature'))
+        //         .fontSize($r('app.float.little_text_size'))
+        //         .margin({ top: $r('app.float.setting_name_margin') })
+        //     }
+        //     .alignItems(HorizontalAlign.Start)
+        //     .margin({ left: $r('app.float.setting_account_margin') })
+        //   }
+        //
+        //   Image($r('app.media.right_grey'))
+        //     .width(20)
+        //     .height(20)
+        //
+        //     // .margin({left: 190})
+        //
+        // }
+        // .onClick(() => {
+        //   return router.pushUrl({url: 'pages/PersonalPage'})
+        // })
+        // .margin({ top: $r('app.float.setting_account_margin') })
+        // .justifyContent(FlexAlign.SpaceBetween)
+        // .width(CommonConstants.FULL_PARENT)
+        // .height($r('app.float.setting_account_height'))
+        // .backgroundColor(Color.White)
+        // .padding({
+        //   left: $r('app.float.setting_account_padding'),
+        //   right: $r('app.float.setting_settingCell_right')
+        // })
+        // .borderRadius($r('app.float.setting_account_borderRadius'))
+
+
+
+        Column(){
           Row() {
-            Image($r('app.media.account'))
-              .width($r('app.float.setting_account_size'))
-              .height($r('app.float.setting_account_size'))
-            Column() {
-              Text($r('app.string.setting_account_name'))
-                .fontSize($r('app.float.setting_account_fontSize'))
-              Text($r('app.string.setting_account_signature'))
-                .fontSize($r('app.float.little_text_size'))
-                .margin({ top: $r('app.float.setting_name_margin') })
+            Row() {
+              Image($r('app.media.account'))
+                .width($r('app.float.setting_account_size'))
+                .height($r('app.float.setting_account_size'))
+              Column() {
+                Text($r('app.string.setting_account_name'))
+                  .fontSize($r('app.float.setting_account_fontSize'))
+                Text($r('app.string.setting_account_signature'))
+                  .fontSize($r('app.float.little_text_size'))
+                  .margin({ top: $r('app.float.setting_name_margin') })
+              }
+              .alignItems(HorizontalAlign.Start)
+              .margin({ left: $r('app.float.setting_account_margin') })
             }
-            .alignItems(HorizontalAlign.Start)
-            .margin({ left: $r('app.float.setting_account_margin') })
+
+            Image($r('app.media.right_grey'))
+              .width(20)
+              .height(20)
+
           }
-
-          Image($r('app.media.right_grey'))
-            .width(20)
-            .height(20)
-
-            // .margin({left: 190})
-
+          .margin({ top: $r('app.float.setting_account_margin') })
+          .justifyContent(FlexAlign.SpaceBetween)
+          .width(CommonConstants.FULL_PARENT)
+          // .height($r('app.float.setting_account_height'))
+          Grid() {
+            ForEach(mainViewModel.getSettingPersonData(), (item: ItemData) => {
+              GridItem() {
+                Column() {
+                  Image(item.img)
+                    .width($r('app.float.home_homeCell_size'))
+                    .height($r('app.float.home_homeCell_size'))
+                  Text(item.title)
+                    .fontSize($r('app.float.little_text_size'))
+                    .margin({ top: $r('app.float.home_homeCell_margin') })
+                }
+              }
+            }, item => JSON.stringify(item))
+          }
+          .columnsTemplate('1fr 1fr 1fr 1fr')
+          .rowsTemplate('1fr')
+          .columnsGap($r('app.float.setting_grid_columnsGap'))
+          .rowsGap($r('app.float.home_grid_rowGap'))
+          .padding({ top: $r('app.float.home_grid_padding'), bottom: $r('app.float.home_grid_padding')})
+          .height($r('app.float.setting_account2_height'))
+          .width(CommonConstants.FULL_PARENT)
         }
-        .onClick(() => {
-          return router.pushUrl({url: 'pages/PersonalPage'})
-        })
-        .margin({ top: $r('app.float.setting_account_margin') })
-        .justifyContent(FlexAlign.SpaceBetween)
         .width(CommonConstants.FULL_PARENT)
         .height($r('app.float.setting_account_height'))
         .backgroundColor(Color.White)
@@ -98,6 +158,12 @@ export default struct Setting {
           right: $r('app.float.setting_settingCell_right')
         })
         .borderRadius($r('app.float.setting_account_borderRadius'))
+
+
+
+
+
+
 
         List() {
           ForEach(mainViewModel.getSettingListData(), (item: ItemData) => {
@@ -117,19 +183,19 @@ export default struct Setting {
         .borderRadius($r('app.float.setting_list_borderRadius'))
         .padding({ top: $r('app.float.setting_list_padding'), bottom: $r('app.float.setting_list_padding') })
 
-        Blank()
+        // Blank()
 
-        Button($r('app.string.setting_button'), { type: ButtonType.Capsule })
-          .width(CommonConstants.BUTTON_WIDTH)
-          .height($r('app.float.login_button_height'))
-          .fontSize($r('app.float.normal_text_size'))
-          .fontColor($r('app.color.setting_button_fontColor'))
-          .fontWeight(FontWeight.Medium)
-          .backgroundColor($r('app.color.setting_button_backgroundColor'))
-          .margin({ bottom: $r('app.float.setting_button_bottom')})
-          .onClick(()=>{
-            router.pushUrl({url: 'pages/Index'})
-          })
+        // Button($r('app.string.setting_button'), { type: ButtonType.Capsule })
+        //   .width(CommonConstants.BUTTON_WIDTH)
+        //   .height($r('app.float.login_button_height'))
+        //   .fontSize($r('app.float.normal_text_size'))
+        //   .fontColor($r('app.color.setting_button_fontColor'))
+        //   .fontWeight(FontWeight.Medium)
+        //   .backgroundColor($r('app.color.setting_button_backgroundColor'))
+        //   .margin({ bottom: $r('app.float.setting_button_bottom')})
+        //   .onClick(()=>{
+        //     router.pushUrl({url: 'pages/Index'})
+        //   })
       }
       .height(CommonConstants.FULL_PARENT)
     }
