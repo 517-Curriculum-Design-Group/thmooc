@@ -58,49 +58,9 @@ export default struct Setting {
             .fontWeight(FontWeight.Medium)
             .fontSize($r('app.float.page_title_text_size'))
             .margin({ top: $r('app.float.mainPage_tabTitles_margin') })
-          //  .padding({ left: $r('app.float.mainPage_tabTitles_padding') })
         }
         .width(CommonConstants.FULL_PARENT)
         .alignItems(HorizontalAlign.Start)
-
-        // Row() {
-        //   Row() {
-        //     Image($r('app.media.account'))
-        //       .width($r('app.float.setting_account_size'))
-        //       .height($r('app.float.setting_account_size'))
-        //     Column() {
-        //       Text($r('app.string.setting_account_name'))
-        //         .fontSize($r('app.float.setting_account_fontSize'))
-        //       Text($r('app.string.setting_account_signature'))
-        //         .fontSize($r('app.float.little_text_size'))
-        //         .margin({ top: $r('app.float.setting_name_margin') })
-        //     }
-        //     .alignItems(HorizontalAlign.Start)
-        //     .margin({ left: $r('app.float.setting_account_margin') })
-        //   }
-        //
-        //   Image($r('app.media.right_grey'))
-        //     .width(20)
-        //     .height(20)
-        //
-        //     // .margin({left: 190})
-        //
-        // }
-        // .onClick(() => {
-        //   return router.pushUrl({url: 'pages/PersonalPage'})
-        // })
-        // .margin({ top: $r('app.float.setting_account_margin') })
-        // .justifyContent(FlexAlign.SpaceBetween)
-        // .width(CommonConstants.FULL_PARENT)
-        // .height($r('app.float.setting_account_height'))
-        // .backgroundColor(Color.White)
-        // .padding({
-        //   left: $r('app.float.setting_account_padding'),
-        //   right: $r('app.float.setting_settingCell_right')
-        // })
-        // .borderRadius($r('app.float.setting_account_borderRadius'))
-
-
 
         Column(){
           Row() {
@@ -124,6 +84,9 @@ export default struct Setting {
               .height(20)
 
           }
+          .onClick(()=> {
+            router.pushUrl({url: 'pages/PersonalPage'})
+          })
           .margin({ top: $r('app.float.setting_account_margin') })
           .justifyContent(FlexAlign.SpaceBetween)
           .width(CommonConstants.FULL_PARENT)
@@ -158,10 +121,6 @@ export default struct Setting {
           right: $r('app.float.setting_settingCell_right')
         })
         .borderRadius($r('app.float.setting_account_borderRadius'))
-
-
-
-
 
 
 
