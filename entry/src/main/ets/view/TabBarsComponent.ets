@@ -27,8 +27,6 @@ export default struct TabBar {
   @State refreshStatus: boolean = false;
   @State refreshText: Resource = $r('app.string.refresh_text');
   goodsList: ListDataSource = new ListDataSource();
-  private startTouchOffsetY: number = 0;
-  private endTouchOffsetY: number = 0;
 
 
   @Builder firstTabBar() {
@@ -65,7 +63,6 @@ export default struct TabBar {
         break;
       case TouchType.Up:
 
-        // Only simulation effect, no data request
         this.timer = setTimeout(() => {
           this.refreshStatus = false;
         }, commonConst.REFRESH_TIME);
@@ -102,12 +99,6 @@ export default struct TabBar {
 
       ForEach(initTabBarData, (item, index) => {
         TabContent() {
-          // Column() {
-          //   Text(item).fontSize(commonConst.MAX_FONT_SIZE)
-          // }
-          // .justifyContent(FlexAlign.Center)
-          // .width(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
-          // .height(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
           Row() {
             List() {
               LazyForEach(this.goodsList, (item) => {
@@ -166,22 +157,6 @@ export default struct TabBar {
                       .margin({bottom:140})
                     }
                   }
-                  // .onTouch((event: TouchEvent) => {
-                  //   switch (event.type) {
-                  //     case TouchType.Down:
-                  //       this.startTouchOffsetY = event.touches[0].y;
-                  //       break;
-                  //     case TouchType.Up:
-                  //       this.startTouchOffsetY = event.touches[0].y;
-                  //       break;
-                  //     case TouchType.Move:
-                  //       if(this.startTouchOffsetY - this.endTouchOffsetY > 0) {
-                  //         this.goodsList.pushData();
-                  //       }
-                  //       break;
-                  //   }
-                  // })
-
 
               })
             }

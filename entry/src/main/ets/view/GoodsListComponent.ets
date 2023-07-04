@@ -20,8 +20,6 @@ import router from '@ohos.router';
 @Component
 export default struct GoodsList {
   @Provide goodsListData: ListDataSource = new ListDataSource();
-  // private startTouchOffsetY: number = 0;
-  // private endTouchOffsetY: number = 0;
 
   build() {
     Row() {
@@ -30,22 +28,6 @@ export default struct GoodsList {
           ListItem() {
             Row() {
               Column() {
-                // Row() {
-                //   Image($r('app.media.account'))
-                //     .width(40)
-                //     .height(40)
-                //   Column() {
-                //     Text($r('app.string.setting_account_name'))
-                //       .fontSize(18)
-                //       .margin({left:10})
-                //   }
-                //   .alignItems(HorizontalAlign.Start)
-                // }
-                // .margin({ top:20,bottom:20 })
-                // .alignItems(VerticalAlign.Center)
-                // .width(commonConst.FULL_PARENT)
-                // .height($r('app.float.setting_account_height'))
-                // .borderRadius($r('app.float.setting_account_borderRadius'))
                 Row(){
                     Image($r('app.media.account'))
                       .width(40)
@@ -60,7 +42,6 @@ export default struct GoodsList {
 
                 Text(item?.goodsName)
                     .fontSize(22).fontWeight(50).width('100%').margin({bottom:5})
-                    // .margin({ bottom: commonConst.BIGGER_FONT_SIZE })
                 Image(item?.goodsImg)
                   .width('100%')
                   .height(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
@@ -95,26 +76,6 @@ export default struct GoodsList {
               .width('100%')
               .height(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
 
-              // Column() {
-              //   Text(item?.goodsName)
-              //     .fontSize(commonConst.NORMAL_FONT_SIZE)
-              //     .margin({ bottom: commonConst.BIGGER_FONT_SIZE })
-              //
-              //   Text(item?.advertising_language)
-              //     .fontColor($r('app.color.gray'))
-              //     .fontSize(commonConst.GOODS_EVALUATE_FONT_SIZE)
-              //     .margin({ right: commonConst.MARGIN_RIGHT, bottom: commonConst.BIGGER_FONT_SIZE })
-              //
-              //   Row() {
-              //     Text(item?.evaluate).fontSize(commonConst.GOODS_EVALUATE_FONT_SIZE).fontColor($r('app.color.deepGray'))
-              //     Text(item?.price).fontSize(commonConst.NORMAL_FONT_SIZE).fontColor($r('app.color.freshRed'))
-              //   }
-              //   .justifyContent(FlexAlign.SpaceAround)
-              //   .width(commonConst.GOODS_LIST_WIDTH)
-              // }
-              // .padding(commonConst.GOODS_LIST_PADDING)
-              // .width(commonConst.GOODS_FONT_WIDTH)
-              // .height(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
             }
             .justifyContent(FlexAlign.Center)
             .height(commonConst.GOODS_LIST_HEIGHT)
@@ -122,21 +83,6 @@ export default struct GoodsList {
             .margin({bottom:120})
 
           }
-          // .onTouch((event: TouchEvent) => {
-          //   switch (event.type) {
-          //     case TouchType.Down:
-          //       this.startTouchOffsetY = event.touches[0].y;
-          //       break;
-          //     case TouchType.Up:
-          //       this.startTouchOffsetY = event.touches[0].y;
-          //       break;
-          //     case TouchType.Move:
-          //       if(this.startTouchOffsetY - this.endTouchOffsetY > 0) {
-          //         this.goodsListData.pushData();
-          //       }
-          //       break;
-          //   }
-          // })
         })
       }
       .backgroundColor(Color.White)
