@@ -127,12 +127,14 @@ export default struct TabBar {
                               .margin({left:10})
                           }
                           .width('100%')
+
                           Text(item?.goodsName)
                             .fontSize(18).fontWeight(50).width('100%').margin({bottom:5})
-                          // .margin({ bottom: commonConst.BIGGER_FONT_SIZE })
+
                           Image(item?.goodsImg)
                             .width('100%')
                             .height(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
+
                           Row(){
                             Row(){
                               Image($r('app.media.highlights')).width($r('app.float.mainPage_baseTab_size')).height($r('app.float.mainPage_baseTab_size'))
@@ -147,6 +149,7 @@ export default struct TabBar {
                               Text('点赞').fontColor(Color.Gray).margin({left:5})
                             }
                           }.width('100%').justifyContent(FlexAlign.SpaceAround).margin({top:10})
+
                         }
                         .width('100%')
                         .height(commonConst.LAYOUT_WIDTH_OR_HEIGHT)

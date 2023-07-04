@@ -1,18 +1,3 @@
-/*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
- * Licensed under the Apache License,Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import commonConst from '../common/constants/CommonConstants';
 import { ListDataSource } from '../viewmodel/ListDataSource';
 import router from '@ohos.router';
@@ -39,9 +24,8 @@ export default struct GoodsList {
                 }
                 .width('100%')
 
+                Text(item?.goodsName).fontSize(22).fontWeight(50).width('100%').margin({bottom:5})
 
-                Text(item?.goodsName)
-                    .fontSize(22).fontWeight(50).width('100%').margin({bottom:5})
                 Image(item?.goodsImg)
                   .width('100%')
                   .height(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
@@ -54,6 +38,7 @@ export default struct GoodsList {
                       }
                     })
                   })
+
                 Row(){
                   Row(){
                     Image($r('app.media.highlights'))
@@ -72,10 +57,10 @@ export default struct GoodsList {
                     Text('点赞').fontColor(Color.Gray).margin({left:5})
                   }
                 }.width('100%').justifyContent(FlexAlign.SpaceAround).margin({top:10})
+
               }
               .width('100%')
               .height(commonConst.LAYOUT_WIDTH_OR_HEIGHT)
-
             }
             .justifyContent(FlexAlign.Center)
             .height(commonConst.GOODS_LIST_HEIGHT)
