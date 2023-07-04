@@ -181,6 +181,14 @@
       "value": "课程管理"
     },
     {
+      "name": "setting_download_data",
+      "value": "离线缓存"
+    },
+    {
+      "name": "setting_word_book",
+      "value": "单词本"
+    },
+    {
       "name": "setting_list_menu",
       "value": "设置"
     },

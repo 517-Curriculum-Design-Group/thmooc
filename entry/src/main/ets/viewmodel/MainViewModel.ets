@@ -82,16 +82,28 @@ export class MainViewModel {
   getSettingListData(): Array<ItemData> {
     let settingListData: ItemData[] = [
       new ItemData($r('app.string.setting_list_news'), $r("app.media.news"), $r("app.string.setting_toggle")),
+      new ItemData($r('app.string.setting_download_data'), $r("app.media.download_four"), null),
+      new ItemData($r('app.string.setting_word_book'), $r("app.media.notebook"), null),
       new ItemData($r('app.string.setting_list_data'), $r("app.media.dropbox"), null),
       new ItemData($r('app.string.mylove_closure'), $r("app.media.like"), null),
-      new ItemData($r('app.string.setting_list_menu'), $r("app.media.config"), null),
-      new ItemData($r('app.string.setting_list_about'), $r("app.media.about"), null),
       new ItemData($r('app.string.setting_list_storage'), $r("app.media.storage"), null),
-      new ItemData($r('app.string.setting_alive_result'), $r("app.media.bookmark"), null),
+      new ItemData($r('app.string.setting_book_mark'), $r("app.media.bookmark"), null),
       new ItemData($r('app.string.setting_alive_result'), $r("app.media.headset_one"), null),
-      new ItemData($r('app.string.setting_list_privacy'), $r("app.media.star"), null)
+      new ItemData($r('app.string.setting_list_privacy'), $r("app.media.star"), null),
+      new ItemData($r('app.string.setting_list_about'), $r("app.media.about"), null),
+      new ItemData($r('app.string.setting_list_menu'), $r("app.media.config"), null)
     ];
     return settingListData;
+  }
+
+  getSettingPersonData(): Array<HomePageGridData> {
+    let settingPersonData: HomePageGridData[] = [
+      new HomePageGridData('我的订单', $r('app.media.order')),
+      new HomePageGridData('我的拼团', $r('app.media.read_book')),
+      new HomePageGridData('优惠券', $r('app.media.coupon')),
+      new HomePageGridData('选课单', $r('app.media.schedule'))
+    ];
+    return settingPersonData;
   }
 
 }

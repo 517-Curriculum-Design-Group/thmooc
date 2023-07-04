@@ -161,6 +161,10 @@
       "value": "8vp"
     },
     {
+      "name": "setting_grid_columnsGap",
+      "value": "30vp"
+    },
+    {
       "name": "home_grid_rowGap",
       "value": "12vp"
     },
@@ -170,7 +174,7 @@
     },
     {
       "name": "home_grid_height",
-      "value": "124vp"
+      "value": "130vp"
     },
     {
       "name": "home_grid_margin",
@@ -242,7 +246,11 @@
     },
     {
       "name": "setting_account_height",
-      "value": "96vp"
+      "value": "140vp"
+    },
+    {
+      "name": "setting_account2_height",
+      "value": "70vp"
     },
     {
       "name": "setting_account_padding",
