@@ -65,7 +65,7 @@ export default struct Setting {
         Column(){
           Row() {
             Row() {
-              Image($r('app.media.account'))
+              Image($r('app.media.CatCool'))
                 .width($r('app.float.setting_account_size'))
                 .height($r('app.float.setting_account_size'))
               Column() {
