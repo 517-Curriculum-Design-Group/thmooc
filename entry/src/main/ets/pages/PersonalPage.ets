@@ -84,13 +84,13 @@ struct PersonalPage {
           CommonUtils.alertDialog(context);
           // router.back()
         })
-      Image($r('app.media.account'))
+      Image($r('app.media.CatCool'))
         .width($r('app.float.avatar_size'))
         .height($r('app.float.avatar_size'))
         .alignSelf(ItemAlign.Center)
         .margin({ top: CommonConstants.AVATAR_MARGIN_TOP })
       Text($r('app.string.text_personal_title'))
-        .fontColor(Color.Black)
+        .fontColor(Color.Blue)
         .fontSize($r('app.float.personal_font_size'))
         .margin({ top: CommonConstants.PERSONAL_MARGIN_TOP })
         .alignSelf(ItemAlign.Center)
@@ -130,7 +130,7 @@ struct PersonalPage {
           this.customDialogController.open();
         }
       })
-      Button("保存退出")
+      Button("保存并退出")
         .width(Const.HALF_SIZE)
         .opacity($r('app.float.login_button_opacity'))
         .margin({top:100})
