@@ -142,21 +142,21 @@ export default struct Setting {
         .borderRadius($r('app.float.setting_list_borderRadius'))
         .padding({ top: $r('app.float.setting_list_padding'), bottom: $r('app.float.setting_list_padding') })
 
-        // Blank()
+        Blank()
 
-        // Button($r('app.string.setting_button'), { type: ButtonType.Capsule })
-        //   .width(CommonConstants.BUTTON_WIDTH)
-        //   .height($r('app.float.login_button_height'))
-        //   .fontSize($r('app.float.normal_text_size'))
-        //   .fontColor($r('app.color.setting_button_fontColor'))
-        //   .fontWeight(FontWeight.Medium)
-        //   .backgroundColor($r('app.color.setting_button_backgroundColor'))
-        //   .margin({ bottom: $r('app.float.setting_button_bottom')})
-        //   .onClick(()=>{
-        //     router.pushUrl({url: 'pages/Index'})
-        //   })
+        Button($r('app.string.setting_button'), { type: ButtonType.Capsule })
+          .width(CommonConstants.BUTTON_WIDTH)
+          .height($r('app.float.login_button_height'))
+          .fontSize($r('app.float.normal_text_size'))
+          .fontColor(Color.Orange)
+          .fontWeight(FontWeight.Medium)
+          .backgroundColor($r('app.color.setting_button_backgroundColor'))
+          .margin({ bottom: $r('app.float.setting_button_bottom')})
+          .onClick(()=>{
+            router.pushUrl({url: 'pages/Index'})
+          })
       }
-      .height(CommonConstants.FULL_PARENT)
+      // .height(CommonConstants.FULL_PARENT)
     }
   }
 }

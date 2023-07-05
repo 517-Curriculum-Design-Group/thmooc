@@ -118,7 +118,7 @@ export default struct TabBar {
                             // }
                             // .width('100%')
 
-                            Image($r('app.media.account'))
+                            Image($r('app.media.CatCool'))
                               .width(40)
                               .height(40)
                               .margin({bottom:10})

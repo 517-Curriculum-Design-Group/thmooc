@@ -14,7 +14,7 @@ export default struct GoodsList {
             Row() {
               Column() {
                 Row(){
-                    Image($r('app.media.account'))
+                    Image($r('app.media.CatCool'))
                       .width(40)
                       .height(40)
                       .margin({bottom:10,top:10})
