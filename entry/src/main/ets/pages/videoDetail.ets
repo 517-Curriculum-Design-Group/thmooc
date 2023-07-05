@@ -85,7 +85,7 @@ struct videoDetail {
                   .margin({ top: 16, bottom: 16 })
 
                 Row() {
-                  Image($r('app.media.account'))
+                  Image($r('app.media.CatCool'))
                     .width($r('app.float.setting_account_size'))
                     .height($r('app.float.setting_account_size'))
                   .margin({left:6})

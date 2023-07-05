@@ -13,9 +13,9 @@ struct Loading {
 
     //justifyContent:主轴对齐（content主轴），alignItems:交叉轴对齐（item交差轴）
     Flex({direction:FlexDirection.Column,justifyContent:FlexAlign.SpaceEvenly,alignItems:ItemAlign.Center}){
-      Text(`[${this.userName}]您好，系统正在登录...`).fontSize(20)
+      Text(`[啊sir]您好，系统正在登录...`).fontSize(20).fontColor(Color.Blue)
       Progress({ value: this.progValue, total: 150, type: ProgressType.ScaleRing })
-        .color(Color.Grey).value(this.progColorValue).width(150)
+        .color(Color.Blue).value(this.progColorValue).width(150)
         .style({ strokeWidth: 20, scaleCount: 30, scaleWidth: 5 })
 
     }
