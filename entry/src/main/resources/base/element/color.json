@@ -164,6 +164,10 @@
     {
       "name": "flex_layout_color",
       "value": "#E5E8EA"
+    },
+    {
+      "name": "setting_color",
+      "value": "#ecce9e"
     }
   ]
 }

@@ -122,27 +122,59 @@ export default struct Setting {
         })
         .borderRadius($r('app.float.setting_account_borderRadius'))
 
-
-
-        List() {
-          ForEach(mainViewModel.getSettingListData(), (item: ItemData) => {
-            ListItem() {
-              this.settingCell(item)
+        Column() {
+          Row() {
+            Row({ space: CommonConstants.COMMON_SPACE }) {
+              Image($r('app.media.vip_one'))
+                .width($r('app.float.setting_size'))
+                .height($r('app.float.setting_size'))
+              Text($r('app.string.setting_vip'))
+                .fontSize($r('app.float.normal_text_size'))
             }
-            .height($r('app.float.setting_list_height'))
-          }, item => JSON.stringify(item))
-        }
-        .backgroundColor(Color.White)
-        .divider({
-          strokeWidth: $r('app.float.setting_list_strokeWidth'),
-          color: Color.Grey,
-          startMargin: $r('app.float.setting_list_startMargin'),
-          endMargin: $r('app.float.setting_list_endMargin')
-        })
-        .borderRadius($r('app.float.setting_list_borderRadius'))
-        .padding({ top: $r('app.float.setting_list_padding'), bottom: $r('app.float.setting_list_padding') })
 
-        Blank()
+            Text('尊享4大学习专属权益')
+              .fontSize($r('app.float.small_text_size'))
+              .padding({
+                left: $r('app.float.setting_jump_width')
+              })
+
+            Image($r('app.media.right_grey'))
+              .width($r('app.float.setting_jump_width'))
+              .height($r('app.float.setting_jump_height'))
+
+          }
+          .height(40)
+          .padding({
+            left: $r('app.float.setting_settingCell_left'),
+            right: $r('app.float.setting_settingCell_right')
+          })
+          .width(CommonConstants.FULL_PARENT)
+          .justifyContent(FlexAlign.SpaceBetween)
+
+          List() {
+            ForEach(mainViewModel.getSettingListData(), (item: ItemData) => {
+              ListItem() {
+                this.settingCell(item)
+              }
+              .height($r('app.float.setting_list_height'))
+            }, item => JSON.stringify(item))
+          }
+          .backgroundColor(Color.White)
+          .divider({
+            strokeWidth: $r('app.float.setting_list_strokeWidth'),
+            color: Color.Grey,
+            startMargin: $r('app.float.setting_list_startMargin'),
+            endMargin: $r('app.float.setting_list_endMargin')
+          })
+          .borderRadius($r('app.float.setting_list_borderRadius'))
+          .padding({ top: $r('app.float.setting_list_padding'), bottom: $r('app.float.setting_list_padding') })
+        }
+        .width(CommonConstants.FULL_PARENT)
+        .backgroundColor($r('app.color.setting_color'))
+        .borderRadius($r('app.float.setting_list_borderRadius'))
+        .height(570)
+
+        Blank().height(30)
 
         Button($r('app.string.setting_button'), { type: ButtonType.Capsule })
           .width(CommonConstants.BUTTON_WIDTH)
@@ -151,12 +183,11 @@ export default struct Setting {
           .fontColor(Color.Orange)
           .fontWeight(FontWeight.Medium)
           .backgroundColor($r('app.color.setting_button_backgroundColor'))
-          .margin({ bottom: $r('app.float.setting_button_bottom')})
+          .margin({ bottom: $r('app.float.setting_button_bottom'), top: $r('app.float.setting_list_padding')})
           .onClick(()=>{
             router.pushUrl({url: 'pages/Index'})
           })
       }
-      // .height(CommonConstants.FULL_PARENT)
     }
   }
 }
