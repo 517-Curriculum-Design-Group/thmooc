@@ -217,6 +217,10 @@
       "value": "Logout"
     },
     {
+      "name": "setting_vip",
+      "value": "开通VIP会员"
+    },
+    {
       "name": "home_list",
       "value": "List"
     },
