@@ -330,6 +330,10 @@
       "value": "Personalized signature"
     },
     {
+      "name": "text_input_phone",
+      "value": "手机号"
+    },
+    {
       "name": "title_birthdate",
       "value": "Date of birth"
     },
