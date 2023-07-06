@@ -345,6 +345,10 @@
       "value": "个性签名"
     },
     {
+      "name": "text_input_phone",
+      "value": "手机号"
+    },
+    {
       "name": "title_birthdate",
       "value": "出生日期"
     },

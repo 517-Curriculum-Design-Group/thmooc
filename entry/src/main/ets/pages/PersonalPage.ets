@@ -98,15 +98,19 @@ struct PersonalPage {
         inputImage: $r('app.media.ic_nickname'),
         hintText: $r('app.string.text_input_hint')
       })
-      TextCommonWidget({
-        textImage: $r('app.media.ic_birthdate'),
-        title: $r('app.string.title_birthdate'),
-        content: $birthdate,
-        onItemClick: () => {
-          CommonUtils.datePickerDialog((birthValue: string) => {
-            this.birthdate = birthValue;
-          });
-        }
+      // TextCommonWidget({
+      //   textImage: $r('app.media.ic_birthdate'),
+      //   title: $r('app.string.title_birthdate'),
+      //   content: $birthdate,
+      //   onItemClick: () => {
+      //     CommonUtils.datePickerDialog((birthValue: string) => {
+      //       this.birthdate = birthValue;
+      //     });
+      //   }
+      // })
+      TextInputWidget({
+        inputImage: $r('app.media.phone'),
+        hintText: $r('app.string.text_input_phone')
       })
       TextCommonWidget({
         textImage: $r('app.media.ic_sex'),
